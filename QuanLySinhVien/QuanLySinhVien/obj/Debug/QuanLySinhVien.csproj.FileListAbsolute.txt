@@ -1,0 +1,57 @@
+D:\STUDY\Quản lý dự án\QuanLySinhVien\QuanLySinhVien\bin\Debug\QuanLySinhVien.exe
+D:\STUDY\Quản lý dự án\QuanLySinhVien\QuanLySinhVien\bin\Debug\QuanLySinhVien.pdb
+D:\STUDY\Quản lý dự án\QuanLySinhVien\QuanLySinhVien\obj\Debug\QuanLySinhVien.csprojResolveAssemblyReference.cache
+D:\STUDY\Quản lý dự án\QuanLySinhVien\QuanLySinhVien\obj\Debug\QuanLySinhVien.Properties.Resources.resources
+D:\STUDY\Quản lý dự án\QuanLySinhVien\QuanLySinhVien\obj\Debug\QuanLySinhVien.csproj.GenerateResource.Cache
+D:\STUDY\Quản lý dự án\QuanLySinhVien\QuanLySinhVien\obj\Debug\QuanLySinhVien.exe
+D:\STUDY\Quản lý dự án\QuanLySinhVien\QuanLySinhVien\obj\Debug\QuanLySinhVien.pdb
+D:\STUDY\Quản lý dự án\QuanLySinhVien\QuanLySinhVien\obj\Debug\QuanLySinhVien.MainStuden.resources
+D:\QuanLySinhVien\QuanLySinhVien\obj\Debug\QuanLySinhVien.exe
+D:\QuanLySinhVien\QuanLySinhVien\obj\Debug\QuanLySinhVien.pdb
+D:\QuanLySinhVien\QuanLySinhVien\bin\Debug\QuanLySinhVien.exe
+D:\QuanLySinhVien\QuanLySinhVien\bin\Debug\QuanLySinhVien.pdb
+D:\QuanLySinhVien\QuanLySinhVien\obj\Debug\QuanLySinhVien.csprojResolveAssemblyReference.cache
+D:\QuanLySinhVien\QuanLySinhVien\obj\Debug\QuanLySinhVien.MainStuden.resources
+D:\QuanLySinhVien\QuanLySinhVien\obj\Debug\QuanLySinhVien.Properties.Resources.resources
+D:\QuanLySinhVien\QuanLySinhVien\obj\Debug\QuanLySinhVien.csproj.GenerateResource.Cache
+D:\STUDY\Quản lý dự án\QuanLySinhVien\QuanLySinhVien\obj\Debug\QuanLySinhVien.GUI.DangNhap.resources
+D:\STUDY\QuanLyDuAn\QuanLySinhVien\QuanLySinhVien\obj\Debug\QuanLySinhVien.exe
+D:\STUDY\QuanLyDuAn\QuanLySinhVien\QuanLySinhVien\obj\Debug\QuanLySinhVien.pdb
+D:\STUDY\QuanLyDuAn\QuanLySinhVien\QuanLySinhVien\bin\Debug\QuanLySinhVien.exe
+D:\STUDY\QuanLyDuAn\QuanLySinhVien\QuanLySinhVien\bin\Debug\QuanLySinhVien.pdb
+D:\STUDY\QuanLyDuAn\QuanLySinhVien\QuanLySinhVien\bin\Debug\System.Data.SQLite.dll
+D:\STUDY\QuanLyDuAn\QuanLySinhVien\QuanLySinhVien\bin\Debug\System.Data.SQLite.xml
+D:\STUDY\QuanLyDuAn\QuanLySinhVien\QuanLySinhVien\obj\Debug\QuanLySinhVien.csprojResolveAssemblyReference.cache
+D:\STUDY\QuanLyDuAn\QuanLySinhVien\QuanLySinhVien\obj\Debug\QuanLySinhVien.GUI.DangNhap.resources
+D:\STUDY\QuanLyDuAn\QuanLySinhVien\QuanLySinhVien\obj\Debug\QuanLySinhVien.MainStuden.resources
+D:\STUDY\QuanLyDuAn\QuanLySinhVien\QuanLySinhVien\obj\Debug\QuanLySinhVien.Properties.Resources.resources
+D:\STUDY\QuanLyDuAn\QuanLySinhVien\QuanLySinhVien\obj\Debug\QuanLySinhVien.csproj.GenerateResource.Cache
+C:\Users\Hamlet Hung\Desktop\QuanLySinhVien\QuanLySinhVien\obj\Debug\QuanLySinhVien.exe
+C:\Users\Hamlet Hung\Desktop\QuanLySinhVien\QuanLySinhVien\obj\Debug\QuanLySinhVien.pdb
+C:\Users\Hamlet Hung\Desktop\QuanLySinhVien\QuanLySinhVien\bin\Debug\QuanLySinhVien.exe
+C:\Users\Hamlet Hung\Desktop\QuanLySinhVien\QuanLySinhVien\bin\Debug\QuanLySinhVien.pdb
+C:\Users\Hamlet Hung\Desktop\QuanLySinhVien\QuanLySinhVien\bin\Debug\System.Data.SQLite.dll
+C:\Users\Hamlet Hung\Desktop\QuanLySinhVien\QuanLySinhVien\bin\Debug\System.Data.SQLite.xml
+C:\Users\Hamlet Hung\Desktop\QuanLySinhVien\QuanLySinhVien\obj\Debug\QuanLySinhVien.csprojResolveAssemblyReference.cache
+C:\Users\Hamlet Hung\Desktop\QuanLySinhVien\QuanLySinhVien\obj\Debug\QuanLySinhVien.GUI.DangNhap.resources
+C:\Users\Hamlet Hung\Desktop\QuanLySinhVien\QuanLySinhVien\obj\Debug\QuanLySinhVien.MainStuden.resources
+C:\Users\Hamlet Hung\Desktop\QuanLySinhVien\QuanLySinhVien\obj\Debug\QuanLySinhVien.Properties.Resources.resources
+C:\Users\Hamlet Hung\Desktop\QuanLySinhVien\QuanLySinhVien\obj\Debug\QuanLySinhVien.csproj.GenerateResource.Cache
+C:\Users\My PC\Desktop\QuanLySinhVien\QuanLySinhVien\obj\Debug\QuanLySinhVien.exe
+C:\Users\My PC\Desktop\QuanLySinhVien\QuanLySinhVien\obj\Debug\QuanLySinhVien.pdb
+C:\Users\My PC\Desktop\QuanLySinhVien\QuanLySinhVien\bin\Debug\QuanLySinhVien.exe
+C:\Users\My PC\Desktop\QuanLySinhVien\QuanLySinhVien\bin\Debug\QuanLySinhVien.pdb
+C:\Users\My PC\Desktop\QuanLySinhVien\QuanLySinhVien\bin\Debug\System.Data.SQLite.xml
+C:\Users\My PC\Desktop\QuanLySinhVien\QuanLySinhVien\obj\Debug\QuanLySinhVien.csprojResolveAssemblyReference.cache
+C:\Users\My PC\Desktop\QuanLySinhVien\QuanLySinhVien\obj\Debug\QuanLySinhVien.GUI.BangDiem.BangDiem.resources
+C:\Users\My PC\Desktop\QuanLySinhVien\QuanLySinhVien\obj\Debug\QuanLySinhVien.GUI.BaoCaoThongKe.BaoCaoThongKe.resources
+C:\Users\My PC\Desktop\QuanLySinhVien\QuanLySinhVien\obj\Debug\QuanLySinhVien.GUI.DangKyDeTai.DangKyDeTai.resources
+C:\Users\My PC\Desktop\QuanLySinhVien\QuanLySinhVien\obj\Debug\QuanLySinhVien.GUI.DangNhap.resources
+C:\Users\My PC\Desktop\QuanLySinhVien\QuanLySinhVien\obj\Debug\QuanLySinhVien.GUI.DeTaiThucTap.DeTaiThucTap.resources
+C:\Users\My PC\Desktop\QuanLySinhVien\QuanLySinhVien\obj\Debug\QuanLySinhVien.GUI.GiaoVienHuongDan.GiaoVienHuongDan.resources
+C:\Users\My PC\Desktop\QuanLySinhVien\QuanLySinhVien\obj\Debug\QuanLySinhVien.GUI.HuyDeTaiDangKy.HuyDeTaiDangKy.resources
+C:\Users\My PC\Desktop\QuanLySinhVien\QuanLySinhVien\obj\Debug\QuanLySinhVien.MainStuden.resources
+C:\Users\My PC\Desktop\QuanLySinhVien\QuanLySinhVien\obj\Debug\QuanLySinhVien.GUI.SinhVienThucTap.SinhVienThucTap.resources
+C:\Users\My PC\Desktop\QuanLySinhVien\QuanLySinhVien\obj\Debug\QuanLySinhVien.GUI.ThayDoiMatKhau._frmThayDoiMatKhau.resources
+C:\Users\My PC\Desktop\QuanLySinhVien\QuanLySinhVien\obj\Debug\QuanLySinhVien.Properties.Resources.resources
+C:\Users\My PC\Desktop\QuanLySinhVien\QuanLySinhVien\obj\Debug\QuanLySinhVien.csproj.GenerateResource.Cache
