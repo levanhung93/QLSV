@@ -17,6 +17,8 @@ namespace QuanLySinhVien.GUI
         /// Biến đánh dấu lần chạy đầu tiên
         /// </summary>
         private bool _isFirstRun = true;
+        private bool _isMousePress = false;
+        private Point _lastPoint;
         #endregion Field
 
         #region Method
@@ -64,10 +66,34 @@ namespace QuanLySinhVien.GUI
             _lblClose.BackColor = Color.White;
         }
 
+        private void OnPanelDangNhapMouseDown(object sender, MouseEventArgs e)
+        {
+            _isMousePress = true;
+            _lastPoint = e.Location;
+        }
+
+        private void OnPanelDangNhapMouseUp(object sender, MouseEventArgs e)
+        {
+            _isMousePress = false;
+        }
+
+        private void OnPanelDangNhapMouseMove(object sender, MouseEventArgs e)
+        {
+            if (_isMousePress)
+            {
+                //quyết định cho form chui ra ngoài màn hình
+                Point currentPoint = e.Location;
+                Point mainLocation = this.Location;
+                int scaleX = currentPoint.X - _lastPoint.X;
+                int scaleY = currentPoint.Y - _lastPoint.Y;
+                this.Location = new Point(mainLocation.X + scaleX, mainLocation.Y + scaleY);
+            }
+        }
         private void InitDatabase()
         {
             DatabaseCore.CreateDatabase();
         }
         #endregion Event
+
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace QuanLySinhVien.GUI.DeTaiThucTap
+﻿namespace QuanLySinhVien.GUI
 {
     partial class DeTaiThucTap
     {
@@ -109,6 +109,7 @@
             // 
             // _txtMaDeTai
             // 
+            this._txtMaDeTai.Enabled = false;
             this._txtMaDeTai.Location = new System.Drawing.Point(187, 34);
             this._txtMaDeTai.Name = "_txtMaDeTai";
             this._txtMaDeTai.Size = new System.Drawing.Size(221, 22);

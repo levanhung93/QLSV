@@ -73,6 +73,7 @@
             this._txtMatKhau.Location = new System.Drawing.Point(236, 123);
             this._txtMatKhau.Margin = new System.Windows.Forms.Padding(4);
             this._txtMatKhau.Name = "_txtMatKhau";
+            this._txtMatKhau.PasswordChar = '*';
             this._txtMatKhau.Size = new System.Drawing.Size(273, 22);
             this._txtMatKhau.TabIndex = 11;
             // 
@@ -114,6 +115,9 @@
             this._panelDangNhap.Name = "_panelDangNhap";
             this._panelDangNhap.Size = new System.Drawing.Size(561, 36);
             this._panelDangNhap.TabIndex = 6;
+            this._panelDangNhap.MouseDown += new System.Windows.Forms.MouseEventHandler(this.OnPanelDangNhapMouseDown);
+            this._panelDangNhap.MouseMove += new System.Windows.Forms.MouseEventHandler(this.OnPanelDangNhapMouseMove);
+            this._panelDangNhap.MouseUp += new System.Windows.Forms.MouseEventHandler(this.OnPanelDangNhapMouseUp);
             // 
             // _lblClose
             // 

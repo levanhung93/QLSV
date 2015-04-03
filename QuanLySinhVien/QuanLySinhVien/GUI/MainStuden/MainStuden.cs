@@ -5,6 +5,8 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using QuanLySinhVien.Common;
+using QuanLySinhVien.GUI;
 
 namespace QuanLySinhVien
 {
@@ -22,17 +24,36 @@ namespace QuanLySinhVien
         {
             InitializeComponent();
             HandleCreated += OnHandleCreated;
+            HandleDestroyed += OnHandleDestroyed;
         }
         #endregion Method
 
         #region Event
+        private void OnHandleDestroyed(object sender, EventArgs e)
+        {
+            GuiResInfoMng.GuiEventHandle -= OnGuiEvent;
+        }
+
         private void OnHandleCreated(object sender, EventArgs e)
         {
             _timDisplay = new Timer();
             _timDisplay.Interval = 1;
             _timDisplay.Tick += OnTimerTick;
             _timDisplay.Enabled = true;
+            GuiResInfoMng.GuiEventHandle += OnGuiEvent;
+        }
 
+        private void OnGuiEvent(GuiResInfoMng.GuiEventID e, object data)
+        {
+            switch (e.ID)
+            {
+                case GuiResInfoMng.GuiEventID.EventID.None:
+                    break;
+                case GuiResInfoMng.GuiEventID.EventID.ChangeScreen:
+                    string screenName = data as string;
+                    _lbScreenInfo.Text = @"Chức năng: " + screenName;
+                    break;
+            }
         }
         private void OnTimerTick(object sender, EventArgs e)
         {
@@ -97,89 +118,209 @@ namespace QuanLySinhVien
 
         private void OnLblTroGiupMouseMove(object sender, MouseEventArgs e)
         {
-            _lblTroGiup.BackColor = Color.PaleTurquoise;
+            _btnTroGiup.BackColor = Color.PaleTurquoise;
         }
 
         private void OnLblTroGiupMouseLeave(object sender, EventArgs e)
         {
-            _lblTroGiup.BackColor = Color.Transparent;
+            _btnTroGiup.BackColor = Color.Transparent;
         }
 
         private void OnLblBaoCaoMouseMove(object sender, MouseEventArgs e)
         {
-            _lblBaoCao.BackColor = Color.PaleTurquoise;
+            _btnBaoCao.BackColor = Color.PaleTurquoise;
         }
 
         private void OnLblBaoCaoMouseLeave(object sender, EventArgs e)
         {
-            _lblBaoCao.BackColor = Color.Transparent;
+            _btnBaoCao.BackColor = Color.Transparent;
         }
 
         private void OnLblGiaoVienHDMouseMove(object sender, MouseEventArgs e)
         {
-            _lblGiaoVienHD.BackColor = Color.PaleTurquoise;
+            _btnGiaoVienHD.BackColor = Color.PaleTurquoise;
         }
 
         private void OnLblGiaoVienHDMouseLeave(object sender, EventArgs e)
         {
-            _lblGiaoVienHD.BackColor = Color.Transparent;
+            _btnGiaoVienHD.BackColor = Color.Transparent;
         }
 
         private void OnLblSinhVienTTMouseMove(object sender, MouseEventArgs e)
         {
-            _lblSinhVienTT.BackColor = Color.PaleTurquoise;
+            _btnSinhVienTT.BackColor = Color.PaleTurquoise;
         }
 
         private void OnLblSinhVienTTMouseLeave(object sender, EventArgs e)
         {
-            _lblSinhVienTT.BackColor = Color.Transparent;
+            _btnSinhVienTT.BackColor = Color.Transparent;
         }
 
         private void OnLblDiemMouseMove(object sender, MouseEventArgs e)
         {
-            _lblDiem.BackColor = Color.PaleTurquoise;
+            _btnDiem.BackColor = Color.PaleTurquoise;
         }
 
         private void OnLblDiemMouseLeave(object sender, EventArgs e)
         {
-            _lblDiem.BackColor = Color.Transparent;
+            _btnDiem.BackColor = Color.Transparent;
         }
 
         private void OnLblHuyDeTaiMouseMove(object sender, MouseEventArgs e)
         {
-            _lblHuyDeTai.BackColor = Color.PaleTurquoise;
+            _btnHuyDeTai.BackColor = Color.PaleTurquoise;
         }
 
         private void OnLblHuyDeTaiMouseLeave(object sender, EventArgs e)
         {
-            _lblHuyDeTai.BackColor = Color.Transparent;
+            _btnHuyDeTai.BackColor = Color.Transparent;
         }
 
         private void OnLblDangKyDeTaiMouseMove(object sender, MouseEventArgs e)
         {
-            _lblDangKyDeTai.BackColor = Color.PaleTurquoise;
+            _btnDangKyDeTai.BackColor = Color.PaleTurquoise;
         }
 
         private void OnLblDangKyDeTaiMouseLeave(object sender, EventArgs e)
         {
-            _lblDangKyDeTai.BackColor = Color.Transparent;
+            _btnDangKyDeTai.BackColor = Color.Transparent;
         }
 
         private void OnLblDeTaiTTMouseMove(object sender, MouseEventArgs e)
         {
-            _lblDeTaiTT.BackColor = Color.PaleTurquoise;
+            _btnDeTaiTT.BackColor = Color.PaleTurquoise;
         }
 
         private void OnLblDeTaiTTMouseLeave(object sender, EventArgs e)
         {
-            _lblDeTaiTT.BackColor = Color.Transparent;
+            _btnDeTaiTT.BackColor = Color.Transparent;
         }
-        #endregion Event
 
         private void MainStuden_Load(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(userName))
                 this._taiKhoan.Text = userName;
         }
+
+        private void OnBtnDeTaiTTClick(object sender, EventArgs e)
+        {
+            GuiResInfoMng.ChangeScreen(GuiResInfoMng.ScreenID.DeTaiThucTapScreen);
+
+            this._panelMain.Controls.Clear();
+            DeTaiThucTap dt = new DeTaiThucTap();
+            this._panelMain.Controls.Add(dt);
+            dt.Show();
+        }
+
+        private void OnBtnDangKyDeTaiClick(object sender, EventArgs e)
+        {
+            GuiResInfoMng.ChangeScreen(GuiResInfoMng.ScreenID.DangKyDeTaiScreen);
+
+            this._panelMain.Controls.Clear();
+            DangKyDeTai dkdt = new DangKyDeTai();
+            this._panelMain.Controls.Add(dkdt);
+            dkdt.Show();
+        }
+
+        private void OnBtnHuyDeTaiClick(object sender, EventArgs e)
+        {
+            GuiResInfoMng.ChangeScreen(GuiResInfoMng.ScreenID.HuyDeTaiDangKyScreen);
+
+            this._panelMain.Controls.Clear();
+            HuyDeTaiDangKy huydt = new HuyDeTaiDangKy();
+            this._panelMain.Controls.Add(huydt);
+            huydt.Show();
+        }
+
+        private void OnBtnDiemClick(object sender, EventArgs e)
+        {
+            GuiResInfoMng.ChangeScreen(GuiResInfoMng.ScreenID.BangDiemScreen);
+
+            this._panelMain.Controls.Clear();
+            BangDiem diem = new BangDiem();
+            this._panelMain.Controls.Add(diem);
+            diem.Show();
+        }
+
+        private void OnBtnSinhVienTTClick(object sender, EventArgs e)
+        {
+            GuiResInfoMng.ChangeScreen(GuiResInfoMng.ScreenID.SinhVienThucTapScreen);
+
+            this._panelMain.Controls.Clear();
+            SinhVienThucTap sv = new SinhVienThucTap();
+            this._panelMain.Controls.Add(sv);
+            sv.Show();
+        }
+
+        private void OnBtnGiaoVienHDClick(object sender, EventArgs e)
+        {
+            GuiResInfoMng.ChangeScreen(GuiResInfoMng.ScreenID.GiaoVienHuongDanScreen);
+
+            this._panelMain.Controls.Clear();
+            GiaoVienHuongDan gv = new GiaoVienHuongDan();
+            this._panelMain.Controls.Add(gv);
+            gv.Show();
+        }
+
+        private void OnBtnBaoCaoClick(object sender, EventArgs e)
+        {
+            GuiResInfoMng.ChangeScreen(GuiResInfoMng.ScreenID.BaoCaoThongKeScreen);
+
+            this._panelMain.Controls.Clear();
+            BaoCaoThongKe bctk = new BaoCaoThongKe();
+            this._panelMain.Controls.Add(bctk);
+            bctk.Show();
+        }
+
+        private void OnBtnTroGiupClick(object sender, EventArgs e)
+        {
+            GuiResInfoMng.ChangeScreen(GuiResInfoMng.ScreenID.TroGiupScreen);
+
+            this._panelMain.Controls.Clear();
+            TroGiup tg = new TroGiup();
+            this._panelMain.Controls.Add(tg);
+            tg.Show();
+        }
+
+        private void OnMenuThayDoiMKClick(object sender, EventArgs e)
+        {
+            this._panelMain.Controls.Clear();
+            _frmThayDoiMatKhau tdmk = new _frmThayDoiMatKhau();
+            tdmk.Show();
+        }
+        private void OnMenuDangXuatClick(object sender, EventArgs e)
+        {
+            this.Close();
+            DangNhap dn = new DangNhap();
+            dn.Show();
+        }
+        #endregion Event
+
+        #region Method
+        public void ChangeControlOfPanel(UserControl userControl)
+        {
+            /*
+             * Dispose control trước khi thêm 1 control vào panel
+             * Sau khi dispose thành công thì ta sẽ add control
+             * */
+            if (userControl != null)
+            {
+                if (_panelMain.Controls.Count > 0)
+                {
+                    UserControl uc = _panelMain.Controls[0] as UserControl;
+
+                    if (null != uc)
+                    {
+                        uc.Dispose();
+                    }
+                }
+                _panelMain.Controls.Clear();
+                _panelMain.Controls.Add(userControl);
+            }
+        }
+        #endregion Method
+
+
+      
     }
 }

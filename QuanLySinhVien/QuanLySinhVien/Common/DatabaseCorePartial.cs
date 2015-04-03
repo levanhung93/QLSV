@@ -15,7 +15,9 @@ namespace QuanLySinhVien.Common
         private static void ExecuteCreateDatabase()
         {
             CreateSinhVien();
+            CreateSinhVienThucTap();
             CreateGiaoVien();
+            CreateGiaoVienHuongDan();
             CreateLop();
             CreateKhoaHoc();
             CreateDeTai();
@@ -63,7 +65,16 @@ namespace QuanLySinhVien.Common
         }
 
         /// <summary>
-        /// thực hiện tạo bảng GiaoVienHD
+        /// thực hiện tạo bảng SinhVienThucTap
+        /// </summary>
+        private static void CreateSinhVienThucTap()
+        {
+            string query = "CREATE TABLE SINHVIEN (MaSV VARCHAR(10),TenSV NVARCHAR(50),Ngay INT,Thang INT,Nam INT,DiaChi NVARCHAR(200),DienThoai NCHAR(11),GioiTinh NVARCHAR(5),Email NVARCHAR(200),MaLop VARCHAR(10) )";
+            ExecuteQuery(query);
+        }
+
+        /// <summary>
+        /// thực hiện tạo bảng GiaoVien
         /// </summary>
         private static void CreateGiaoVien()
         {
@@ -99,6 +110,15 @@ namespace QuanLySinhVien.Common
         }
 
         /// <summary>
+        /// thực hiện tạo bảng GiaoVienHuongDan
+        /// </summary>
+        private static void CreateGiaoVienHuongDan()
+        {
+            string query = "CREATE TABLE GIAOVIEN (MaGV VARCHAR(10),TenGV NVARCHAR(50),Ngay INT,Thang INT,Nam INT,DiaChi NVARCHAR(200),DienThoai NCHAR(11),GioiTinh NVARCHAR(5),Email NVARCHAR(200))";
+            ExecuteQuery(query);
+        }
+
+        /// <summary>
         /// thực hiện tạo bảng Lop
         /// </summary>
         private static void CreateLop()
@@ -121,7 +141,7 @@ namespace QuanLySinhVien.Common
         /// </summary>
         private static void CreateDeTai()
         {
-            string query = "CREATE TABLE DETAI (MaDT VARCHAR(10),TenDT NVARCHAR(1000),MaGV VARCHAR(10) )";
+            string query = "CREATE TABLE DETAI (MaDT VARCHAR(10),TenDT TEXT,MaGV VARCHAR(10) )";
             ExecuteQuery(query);
         }
 

@@ -1,4 +1,4 @@
-﻿namespace QuanLySinhVien.GUI.ThayDoiMatKhau
+﻿namespace QuanLySinhVien.GUI
 {
     partial class _frmThayDoiMatKhau
     {
@@ -52,6 +52,9 @@
             this._lblClose.TabIndex = 1;
             this._lblClose.Text = "X";
             this._lblClose.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this._lblClose.Click += new System.EventHandler(this.OnLblThayDoiMKClick);
+            this._lblClose.MouseLeave += new System.EventHandler(this.OnCloseMouseLeave);
+            this._lblClose.MouseMove += new System.Windows.Forms.MouseEventHandler(this.OnCloseMouseMove);
             // 
             // _pnlThayDoiMatKhau
             // 
@@ -95,6 +98,7 @@
             this._txtMatKhauCu.Location = new System.Drawing.Point(231, 119);
             this._txtMatKhauCu.Margin = new System.Windows.Forms.Padding(4);
             this._txtMatKhauCu.Name = "_txtMatKhauCu";
+            this._txtMatKhauCu.PasswordChar = '*';
             this._txtMatKhauCu.Size = new System.Drawing.Size(273, 22);
             this._txtMatKhauCu.TabIndex = 17;
             // 
@@ -131,6 +135,7 @@
             this._txtMatKhauMoi.Location = new System.Drawing.Point(231, 163);
             this._txtMatKhauMoi.Margin = new System.Windows.Forms.Padding(4);
             this._txtMatKhauMoi.Name = "_txtMatKhauMoi";
+            this._txtMatKhauMoi.PasswordChar = '*';
             this._txtMatKhauMoi.Size = new System.Drawing.Size(273, 22);
             this._txtMatKhauMoi.TabIndex = 20;
             // 
@@ -160,7 +165,7 @@
             this.Controls.Add(this._pnlThayDoiMatKhau);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "_frmThayDoiMatKhau";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ThayDoiMatKhau";

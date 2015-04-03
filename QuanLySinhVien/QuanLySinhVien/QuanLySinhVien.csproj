@@ -47,6 +47,7 @@
     <Compile Include="Common\chuoi.cs" />
     <Compile Include="Common\DatabaseCore.cs" />
     <Compile Include="Common\DatabaseCorePartial.cs" />
+    <Compile Include="Common\GuiResInfoMng.cs" />
     <Compile Include="GUI\BangDiem\BangDiem.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -107,6 +108,12 @@
     <Compile Include="GUI\ThayDoiMatKhau\ThayDoiMatKhau.Designer.cs">
       <DependentUpon>ThayDoiMatKhau.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\TroGiup\TroGiup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\TroGiup\TroGiup.Designer.cs">
+      <DependentUpon>TroGiup.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="GUI\BangDiem\BangDiem.resx">
@@ -138,6 +145,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\ThayDoiMatKhau\ThayDoiMatKhau.resx">
       <DependentUpon>ThayDoiMatKhau.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\TroGiup\TroGiup.resx">
+      <DependentUpon>TroGiup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -204,7 +214,9 @@
   <ItemGroup>
     <None Include="Resources\back.JPG" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\logout~2.ico" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\doipass.png" />
   </ItemGroup>

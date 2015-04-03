@@ -1,4 +1,4 @@
-﻿namespace QuanLySinhVien.GUI.DangKyDeTai
+﻿namespace QuanLySinhVien.GUI
 {
     partial class DangKyDeTai
     {

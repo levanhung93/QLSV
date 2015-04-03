@@ -1,4 +1,4 @@
-﻿namespace QuanLySinhVien.GUI.GiaoVienHuongDan
+﻿namespace QuanLySinhVien.GUI
 {
     partial class GiaoVienHuongDan
     {
@@ -53,9 +53,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this._txtGioiTinhGV = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this._cboNamSinhGV = new System.Windows.Forms.ComboBox();
-            this._cboThangSinhGV = new System.Windows.Forms.ComboBox();
-            this._cboNgaySinhGV = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this._grbDatGiaoVien = new System.Windows.Forms.GroupBox();
             this._dgvGiaoVien = new System.Windows.Forms.DataGridView();
@@ -70,6 +67,9 @@
             this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._txtTongBanGhi = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
+            this._txtNgaySinhGV = new System.Windows.Forms.TextBox();
+            this._txtThangSinhGV = new System.Windows.Forms.TextBox();
+            this._txtNamSinhGV = new System.Windows.Forms.TextBox();
             this._grbThongTinGiaoVienHD.SuspendLayout();
             this._grbDatGiaoVien.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._dgvGiaoVien)).BeginInit();
@@ -202,6 +202,7 @@
             // 
             // _txtTenGiaoVienHD
             // 
+            this._txtTenGiaoVienHD.Enabled = false;
             this._txtTenGiaoVienHD.Location = new System.Drawing.Point(190, 66);
             this._txtTenGiaoVienHD.Name = "_txtTenGiaoVienHD";
             this._txtTenGiaoVienHD.Size = new System.Drawing.Size(221, 22);
@@ -245,15 +246,15 @@
             // 
             // _grbThongTinGiaoVienHD
             // 
+            this._grbThongTinGiaoVienHD.Controls.Add(this._txtNamSinhGV);
+            this._grbThongTinGiaoVienHD.Controls.Add(this._txtThangSinhGV);
+            this._grbThongTinGiaoVienHD.Controls.Add(this._txtNgaySinhGV);
             this._grbThongTinGiaoVienHD.Controls.Add(this._txtEmailGV);
             this._grbThongTinGiaoVienHD.Controls.Add(this._txtDienThoaiGV);
             this._grbThongTinGiaoVienHD.Controls.Add(this._txtDiachiGV);
             this._grbThongTinGiaoVienHD.Controls.Add(this.label9);
             this._grbThongTinGiaoVienHD.Controls.Add(this._txtGioiTinhGV);
             this._grbThongTinGiaoVienHD.Controls.Add(this.label8);
-            this._grbThongTinGiaoVienHD.Controls.Add(this._cboNamSinhGV);
-            this._grbThongTinGiaoVienHD.Controls.Add(this._cboThangSinhGV);
-            this._grbThongTinGiaoVienHD.Controls.Add(this._cboNgaySinhGV);
             this._grbThongTinGiaoVienHD.Controls.Add(this.label7);
             this._grbThongTinGiaoVienHD.Controls.Add(this._cboMaGiaoVienHD);
             this._grbThongTinGiaoVienHD.Controls.Add(this._txtTenGiaoVienHD);
@@ -270,6 +271,7 @@
             // 
             // _txtEmailGV
             // 
+            this._txtEmailGV.Enabled = false;
             this._txtEmailGV.Location = new System.Drawing.Point(608, 106);
             this._txtEmailGV.Name = "_txtEmailGV";
             this._txtEmailGV.Size = new System.Drawing.Size(221, 22);
@@ -277,6 +279,7 @@
             // 
             // _txtDienThoaiGV
             // 
+            this._txtDienThoaiGV.Enabled = false;
             this._txtDienThoaiGV.Location = new System.Drawing.Point(608, 72);
             this._txtDienThoaiGV.Name = "_txtDienThoaiGV";
             this._txtDienThoaiGV.Size = new System.Drawing.Size(221, 22);
@@ -284,6 +287,7 @@
             // 
             // _txtDiachiGV
             // 
+            this._txtDiachiGV.Enabled = false;
             this._txtDiachiGV.Location = new System.Drawing.Point(608, 42);
             this._txtDiachiGV.Name = "_txtDiachiGV";
             this._txtDiachiGV.Size = new System.Drawing.Size(221, 22);
@@ -300,6 +304,7 @@
             // 
             // _txtGioiTinhGV
             // 
+            this._txtGioiTinhGV.Enabled = false;
             this._txtGioiTinhGV.Location = new System.Drawing.Point(190, 133);
             this._txtGioiTinhGV.Name = "_txtGioiTinhGV";
             this._txtGioiTinhGV.Size = new System.Drawing.Size(221, 22);
@@ -313,33 +318,6 @@
             this.label8.Size = new System.Drawing.Size(67, 16);
             this.label8.TabIndex = 13;
             this.label8.Text = "Điện thoại";
-            // 
-            // _cboNamSinhGV
-            // 
-            this._cboNamSinhGV.Enabled = false;
-            this._cboNamSinhGV.FormattingEnabled = true;
-            this._cboNamSinhGV.Location = new System.Drawing.Point(350, 98);
-            this._cboNamSinhGV.Name = "_cboNamSinhGV";
-            this._cboNamSinhGV.Size = new System.Drawing.Size(61, 24);
-            this._cboNamSinhGV.TabIndex = 12;
-            // 
-            // _cboThangSinhGV
-            // 
-            this._cboThangSinhGV.Enabled = false;
-            this._cboThangSinhGV.FormattingEnabled = true;
-            this._cboThangSinhGV.Location = new System.Drawing.Point(265, 98);
-            this._cboThangSinhGV.Name = "_cboThangSinhGV";
-            this._cboThangSinhGV.Size = new System.Drawing.Size(64, 24);
-            this._cboThangSinhGV.TabIndex = 11;
-            // 
-            // _cboNgaySinhGV
-            // 
-            this._cboNgaySinhGV.Enabled = false;
-            this._cboNgaySinhGV.FormattingEnabled = true;
-            this._cboNgaySinhGV.Location = new System.Drawing.Point(190, 98);
-            this._cboNgaySinhGV.Name = "_cboNgaySinhGV";
-            this._cboNgaySinhGV.Size = new System.Drawing.Size(64, 24);
-            this._cboNgaySinhGV.TabIndex = 10;
             // 
             // label7
             // 
@@ -436,6 +414,7 @@
             // 
             // _txtTongBanGhi
             // 
+            this._txtTongBanGhi.Enabled = false;
             this._txtTongBanGhi.Location = new System.Drawing.Point(240, 291);
             this._txtTongBanGhi.Name = "_txtTongBanGhi";
             this._txtTongBanGhi.Size = new System.Drawing.Size(82, 22);
@@ -449,6 +428,30 @@
             this.label11.Size = new System.Drawing.Size(105, 16);
             this.label11.TabIndex = 31;
             this.label11.Text = "Tổng số bản ghi";
+            // 
+            // _txtNgaySinhGV
+            // 
+            this._txtNgaySinhGV.Enabled = false;
+            this._txtNgaySinhGV.Location = new System.Drawing.Point(190, 100);
+            this._txtNgaySinhGV.Name = "_txtNgaySinhGV";
+            this._txtNgaySinhGV.Size = new System.Drawing.Size(66, 22);
+            this._txtNgaySinhGV.TabIndex = 19;
+            // 
+            // _txtThangSinhGV
+            // 
+            this._txtThangSinhGV.Enabled = false;
+            this._txtThangSinhGV.Location = new System.Drawing.Point(267, 100);
+            this._txtThangSinhGV.Name = "_txtThangSinhGV";
+            this._txtThangSinhGV.Size = new System.Drawing.Size(66, 22);
+            this._txtThangSinhGV.TabIndex = 20;
+            // 
+            // _txtNamSinhGV
+            // 
+            this._txtNamSinhGV.Enabled = false;
+            this._txtNamSinhGV.Location = new System.Drawing.Point(347, 100);
+            this._txtNamSinhGV.Name = "_txtNamSinhGV";
+            this._txtNamSinhGV.Size = new System.Drawing.Size(66, 22);
+            this._txtNamSinhGV.TabIndex = 21;
             // 
             // GiaoVienHuongDan
             // 
@@ -502,10 +505,7 @@
         private System.Windows.Forms.GroupBox _grbThongTinGiaoVienHD;
         private System.Windows.Forms.GroupBox _grbDatGiaoVien;
         private System.Windows.Forms.DataGridView _dgvGiaoVien;
-        private System.Windows.Forms.ComboBox _cboNgaySinhGV;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox _cboNamSinhGV;
-        private System.Windows.Forms.ComboBox _cboThangSinhGV;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox _txtGioiTinhGV;
@@ -523,5 +523,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column13;
         private System.Windows.Forms.TextBox _txtTongBanGhi;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox _txtNamSinhGV;
+        private System.Windows.Forms.TextBox _txtThangSinhGV;
+        private System.Windows.Forms.TextBox _txtNgaySinhGV;
     }
 }

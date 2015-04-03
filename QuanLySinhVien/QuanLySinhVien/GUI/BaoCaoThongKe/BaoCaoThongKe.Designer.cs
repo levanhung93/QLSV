@@ -1,4 +1,4 @@
-﻿namespace QuanLySinhVien.GUI.BaoCaoThongKe
+﻿namespace QuanLySinhVien.GUI
 {
     partial class BaoCaoThongKe
     {

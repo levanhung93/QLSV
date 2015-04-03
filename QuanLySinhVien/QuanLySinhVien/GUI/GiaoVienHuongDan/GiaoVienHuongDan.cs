@@ -6,7 +6,7 @@ using System.Data;
 using System.Text;
 using System.Windows.Forms;
 
-namespace QuanLySinhVien.GUI.GiaoVienHuongDan
+namespace QuanLySinhVien.GUI
 {
     public partial class GiaoVienHuongDan : UserControl
     {

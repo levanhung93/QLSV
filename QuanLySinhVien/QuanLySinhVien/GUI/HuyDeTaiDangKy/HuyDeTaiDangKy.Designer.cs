@@ -1,4 +1,4 @@
-﻿namespace QuanLySinhVien.GUI.HuyDeTaiDangKy
+﻿namespace QuanLySinhVien.GUI
 {
     partial class HuyDeTaiDangKy
     {
@@ -41,7 +41,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this._cboMaGiaoVienHD = new System.Windows.Forms.ComboBox();
             this._txtTenGiaoVienHD = new System.Windows.Forms.TextBox();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,6 +59,7 @@
             this._btnTimKiemDeTaiDK = new System.Windows.Forms.Label();
             this._grbDatGiaoVien = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
+            this._txtMaGiaoVienHD = new System.Windows.Forms.TextBox();
             this._grbThongTinGiaoVienHD.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._dgvGiaoVien)).BeginInit();
             this._grbDatGiaoVien.SuspendLayout();
@@ -67,6 +67,7 @@
             // 
             // textBox1
             // 
+            this.textBox1.Enabled = false;
             this.textBox1.Location = new System.Drawing.Point(628, 147);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(221, 22);
@@ -83,6 +84,7 @@
             // 
             // _txtTenDeTai
             // 
+            this._txtTenDeTai.Enabled = false;
             this._txtTenDeTai.Location = new System.Drawing.Point(190, 130);
             this._txtTenDeTai.Multiline = true;
             this._txtTenDeTai.Name = "_txtTenDeTai";
@@ -100,6 +102,7 @@
             // 
             // _txtEmailGV
             // 
+            this._txtEmailGV.Enabled = false;
             this._txtEmailGV.Location = new System.Drawing.Point(628, 106);
             this._txtEmailGV.Name = "_txtEmailGV";
             this._txtEmailGV.Size = new System.Drawing.Size(221, 22);
@@ -107,6 +110,7 @@
             // 
             // _txtDienThoaiGV
             // 
+            this._txtDienThoaiGV.Enabled = false;
             this._txtDienThoaiGV.Location = new System.Drawing.Point(628, 72);
             this._txtDienThoaiGV.Name = "_txtDienThoaiGV";
             this._txtDienThoaiGV.Size = new System.Drawing.Size(221, 22);
@@ -114,6 +118,7 @@
             // 
             // _txtDiachiGV
             // 
+            this._txtDiachiGV.Enabled = false;
             this._txtDiachiGV.Location = new System.Drawing.Point(628, 39);
             this._txtDiachiGV.Name = "_txtDiachiGV";
             this._txtDiachiGV.Size = new System.Drawing.Size(221, 22);
@@ -165,16 +170,9 @@
             this.label7.TabIndex = 9;
             this.label7.Text = "Mã đề tài";
             // 
-            // _cboMaGiaoVienHD
-            // 
-            this._cboMaGiaoVienHD.FormattingEnabled = true;
-            this._cboMaGiaoVienHD.Location = new System.Drawing.Point(190, 34);
-            this._cboMaGiaoVienHD.Name = "_cboMaGiaoVienHD";
-            this._cboMaGiaoVienHD.Size = new System.Drawing.Size(221, 24);
-            this._cboMaGiaoVienHD.TabIndex = 7;
-            // 
             // _txtTenGiaoVienHD
             // 
+            this._txtTenGiaoVienHD.Enabled = false;
             this._txtTenGiaoVienHD.Location = new System.Drawing.Point(190, 66);
             this._txtTenGiaoVienHD.Name = "_txtTenGiaoVienHD";
             this._txtTenGiaoVienHD.Size = new System.Drawing.Size(221, 22);
@@ -277,6 +275,7 @@
             // 
             // _grbThongTinGiaoVienHD
             // 
+            this._grbThongTinGiaoVienHD.Controls.Add(this._txtMaGiaoVienHD);
             this._grbThongTinGiaoVienHD.Controls.Add(this.textBox1);
             this._grbThongTinGiaoVienHD.Controls.Add(this.label10);
             this._grbThongTinGiaoVienHD.Controls.Add(this._txtTenDeTai);
@@ -287,7 +286,6 @@
             this._grbThongTinGiaoVienHD.Controls.Add(this.label9);
             this._grbThongTinGiaoVienHD.Controls.Add(this.label8);
             this._grbThongTinGiaoVienHD.Controls.Add(this.label7);
-            this._grbThongTinGiaoVienHD.Controls.Add(this._cboMaGiaoVienHD);
             this._grbThongTinGiaoVienHD.Controls.Add(this._txtTenGiaoVienHD);
             this._grbThongTinGiaoVienHD.Controls.Add(this.label5);
             this._grbThongTinGiaoVienHD.Controls.Add(this.label4);
@@ -351,6 +349,14 @@
             this.label1.TabIndex = 29;
             this.label1.Text = "HỦY ĐỀ TÀI THỰC TẬP";
             // 
+            // _txtMaGiaoVienHD
+            // 
+            this._txtMaGiaoVienHD.Enabled = false;
+            this._txtMaGiaoVienHD.Location = new System.Drawing.Point(190, 31);
+            this._txtMaGiaoVienHD.Name = "_txtMaGiaoVienHD";
+            this._txtMaGiaoVienHD.Size = new System.Drawing.Size(221, 22);
+            this._txtMaGiaoVienHD.TabIndex = 23;
+            // 
             // HuyDeTaiDangKy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -363,7 +369,7 @@
             this.Controls.Add(this._grbDatGiaoVien);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "HuyDeTaiDangKy";
             this.Size = new System.Drawing.Size(1024, 486);
             this._grbThongTinGiaoVienHD.ResumeLayout(false);
@@ -390,7 +396,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox _cboMaGiaoVienHD;
         private System.Windows.Forms.TextBox _txtTenGiaoVienHD;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
@@ -409,5 +414,6 @@
         private System.Windows.Forms.Label _btnTimKiemDeTaiDK;
         private System.Windows.Forms.GroupBox _grbDatGiaoVien;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox _txtMaGiaoVienHD;
     }
 }

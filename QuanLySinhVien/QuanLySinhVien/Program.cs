@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 using QuanLySinhVien.GUI;
+using QuanLySinhVien.Common;
 
 namespace QuanLySinhVien
 {
     static class Program
     {
+        public static Form MainForm;
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -15,8 +17,9 @@ namespace QuanLySinhVien
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-           // Application.Run(new MainStuden());
+             MainForm = new MainStuden();
             Application.Run(new DangNhap());
+            //Application.Run(MainForm);
         }
     }
 }

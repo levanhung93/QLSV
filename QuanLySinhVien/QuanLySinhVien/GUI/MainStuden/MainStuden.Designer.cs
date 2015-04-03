@@ -33,18 +33,19 @@
             this._lblMiniMize = new System.Windows.Forms.Label();
             this._lblClose = new System.Windows.Forms.Label();
             this._panelBottom = new System.Windows.Forms.Panel();
+            this._lbScreenInfo = new System.Windows.Forms.Label();
             this._lbTime = new System.Windows.Forms.Label();
             this._btnTroVe = new System.Windows.Forms.Button();
             this._panelTopRight = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this._lblBaoCao = new System.Windows.Forms.Label();
-            this._lblTroGiup = new System.Windows.Forms.Label();
-            this._lblDeTaiTT = new System.Windows.Forms.Label();
-            this._lblDangKyDeTai = new System.Windows.Forms.Label();
-            this._lblHuyDeTai = new System.Windows.Forms.Label();
-            this._lblDiem = new System.Windows.Forms.Label();
-            this._lblSinhVienTT = new System.Windows.Forms.Label();
-            this._lblGiaoVienHD = new System.Windows.Forms.Label();
+            this._btnBaoCao = new System.Windows.Forms.Label();
+            this._btnTroGiup = new System.Windows.Forms.Label();
+            this._btnDeTaiTT = new System.Windows.Forms.Label();
+            this._btnDangKyDeTai = new System.Windows.Forms.Label();
+            this._btnHuyDeTai = new System.Windows.Forms.Label();
+            this._btnDiem = new System.Windows.Forms.Label();
+            this._btnSinhVienTT = new System.Windows.Forms.Label();
+            this._btnGiaoVienHD = new System.Windows.Forms.Label();
             this._menuTaiKhoan = new System.Windows.Forms.MenuStrip();
             this._taiKhoan = new System.Windows.Forms.ToolStripMenuItem();
             this._menuThayDoiMK = new System.Windows.Forms.ToolStripMenuItem();
@@ -104,6 +105,7 @@
             this._panelBottom.BackColor = System.Drawing.Color.White;
             this._panelBottom.BackgroundImage = global::QuanLySinhVien.Properties.Resources.footer;
             this._panelBottom.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this._panelBottom.Controls.Add(this._lbScreenInfo);
             this._panelBottom.Controls.Add(this._lbTime);
             this._panelBottom.Controls.Add(this._btnTroVe);
             this._panelBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -111,6 +113,17 @@
             this._panelBottom.Name = "_panelBottom";
             this._panelBottom.Size = new System.Drawing.Size(1024, 30);
             this._panelBottom.TabIndex = 1;
+            // 
+            // _lbScreenInfo
+            // 
+            this._lbScreenInfo.ForeColor = System.Drawing.Color.White;
+            this._lbScreenInfo.Image = global::QuanLySinhVien.Properties.Resources.footer;
+            this._lbScreenInfo.Location = new System.Drawing.Point(140, 6);
+            this._lbScreenInfo.Name = "_lbScreenInfo";
+            this._lbScreenInfo.Size = new System.Drawing.Size(353, 19);
+            this._lbScreenInfo.TabIndex = 2;
+            this._lbScreenInfo.Text = "Chức năng: ";
+            this._lbScreenInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // _lbTime
             // 
@@ -139,14 +152,14 @@
             this._panelTopRight.BackgroundImage = global::QuanLySinhVien.Properties.Resources.background_top;
             this._panelTopRight.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this._panelTopRight.Controls.Add(this.label1);
-            this._panelTopRight.Controls.Add(this._lblBaoCao);
-            this._panelTopRight.Controls.Add(this._lblTroGiup);
-            this._panelTopRight.Controls.Add(this._lblDeTaiTT);
-            this._panelTopRight.Controls.Add(this._lblDangKyDeTai);
-            this._panelTopRight.Controls.Add(this._lblHuyDeTai);
-            this._panelTopRight.Controls.Add(this._lblDiem);
-            this._panelTopRight.Controls.Add(this._lblSinhVienTT);
-            this._panelTopRight.Controls.Add(this._lblGiaoVienHD);
+            this._panelTopRight.Controls.Add(this._btnBaoCao);
+            this._panelTopRight.Controls.Add(this._btnTroGiup);
+            this._panelTopRight.Controls.Add(this._btnDeTaiTT);
+            this._panelTopRight.Controls.Add(this._btnDangKyDeTai);
+            this._panelTopRight.Controls.Add(this._btnHuyDeTai);
+            this._panelTopRight.Controls.Add(this._btnDiem);
+            this._panelTopRight.Controls.Add(this._btnSinhVienTT);
+            this._panelTopRight.Controls.Add(this._btnGiaoVienHD);
             this._panelTopRight.Controls.Add(this._menuTaiKhoan);
             this._panelTopRight.Dock = System.Windows.Forms.DockStyle.Top;
             this._panelTopRight.Location = new System.Drawing.Point(0, 40);
@@ -165,133 +178,141 @@
             this.label1.TabIndex = 9;
             this.label1.Text = "Xin chào:";
             // 
-            // _lblBaoCao
+            // _btnBaoCao
             // 
-            this._lblBaoCao.BackColor = System.Drawing.Color.Transparent;
-            this._lblBaoCao.Cursor = System.Windows.Forms.Cursors.Hand;
-            this._lblBaoCao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._lblBaoCao.Image = global::QuanLySinhVien.Properties.Resources.report;
-            this._lblBaoCao.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this._lblBaoCao.Location = new System.Drawing.Point(823, 12);
-            this._lblBaoCao.Name = "_lblBaoCao";
-            this._lblBaoCao.Size = new System.Drawing.Size(100, 60);
-            this._lblBaoCao.TabIndex = 7;
-            this._lblBaoCao.Text = "Báo cáo";
-            this._lblBaoCao.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this._lblBaoCao.MouseLeave += new System.EventHandler(this.OnLblBaoCaoMouseLeave);
-            this._lblBaoCao.MouseMove += new System.Windows.Forms.MouseEventHandler(this.OnLblBaoCaoMouseMove);
+            this._btnBaoCao.BackColor = System.Drawing.Color.Transparent;
+            this._btnBaoCao.Cursor = System.Windows.Forms.Cursors.Hand;
+            this._btnBaoCao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._btnBaoCao.Image = global::QuanLySinhVien.Properties.Resources.report;
+            this._btnBaoCao.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this._btnBaoCao.Location = new System.Drawing.Point(823, 12);
+            this._btnBaoCao.Name = "_btnBaoCao";
+            this._btnBaoCao.Size = new System.Drawing.Size(100, 60);
+            this._btnBaoCao.TabIndex = 7;
+            this._btnBaoCao.Text = "Báo cáo";
+            this._btnBaoCao.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this._btnBaoCao.Click += new System.EventHandler(this.OnBtnBaoCaoClick);
+            this._btnBaoCao.MouseLeave += new System.EventHandler(this.OnLblBaoCaoMouseLeave);
+            this._btnBaoCao.MouseMove += new System.Windows.Forms.MouseEventHandler(this.OnLblBaoCaoMouseMove);
             // 
-            // _lblTroGiup
+            // _btnTroGiup
             // 
-            this._lblTroGiup.BackColor = System.Drawing.Color.Transparent;
-            this._lblTroGiup.Cursor = System.Windows.Forms.Cursors.Hand;
-            this._lblTroGiup.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._lblTroGiup.Image = global::QuanLySinhVien.Properties.Resources.help;
-            this._lblTroGiup.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this._lblTroGiup.Location = new System.Drawing.Point(912, 12);
-            this._lblTroGiup.Name = "_lblTroGiup";
-            this._lblTroGiup.Size = new System.Drawing.Size(100, 60);
-            this._lblTroGiup.TabIndex = 6;
-            this._lblTroGiup.Text = "Trợ giúp";
-            this._lblTroGiup.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this._lblTroGiup.MouseLeave += new System.EventHandler(this.OnLblTroGiupMouseLeave);
-            this._lblTroGiup.MouseMove += new System.Windows.Forms.MouseEventHandler(this.OnLblTroGiupMouseMove);
+            this._btnTroGiup.BackColor = System.Drawing.Color.Transparent;
+            this._btnTroGiup.Cursor = System.Windows.Forms.Cursors.Hand;
+            this._btnTroGiup.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._btnTroGiup.Image = global::QuanLySinhVien.Properties.Resources.help;
+            this._btnTroGiup.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this._btnTroGiup.Location = new System.Drawing.Point(912, 12);
+            this._btnTroGiup.Name = "_btnTroGiup";
+            this._btnTroGiup.Size = new System.Drawing.Size(100, 60);
+            this._btnTroGiup.TabIndex = 6;
+            this._btnTroGiup.Text = "Trợ giúp";
+            this._btnTroGiup.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this._btnTroGiup.Click += new System.EventHandler(this.OnBtnTroGiupClick);
+            this._btnTroGiup.MouseLeave += new System.EventHandler(this.OnLblTroGiupMouseLeave);
+            this._btnTroGiup.MouseMove += new System.Windows.Forms.MouseEventHandler(this.OnLblTroGiupMouseMove);
             // 
-            // _lblDeTaiTT
+            // _btnDeTaiTT
             // 
-            this._lblDeTaiTT.BackColor = System.Drawing.Color.Transparent;
-            this._lblDeTaiTT.Cursor = System.Windows.Forms.Cursors.Hand;
-            this._lblDeTaiTT.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._lblDeTaiTT.Image = global::QuanLySinhVien.Properties.Resources.abc;
-            this._lblDeTaiTT.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this._lblDeTaiTT.Location = new System.Drawing.Point(181, 12);
-            this._lblDeTaiTT.Name = "_lblDeTaiTT";
-            this._lblDeTaiTT.Size = new System.Drawing.Size(100, 60);
-            this._lblDeTaiTT.TabIndex = 5;
-            this._lblDeTaiTT.Text = "Đề tài thực tập";
-            this._lblDeTaiTT.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this._lblDeTaiTT.MouseLeave += new System.EventHandler(this.OnLblDeTaiTTMouseLeave);
-            this._lblDeTaiTT.MouseMove += new System.Windows.Forms.MouseEventHandler(this.OnLblDeTaiTTMouseMove);
+            this._btnDeTaiTT.BackColor = System.Drawing.Color.Transparent;
+            this._btnDeTaiTT.Cursor = System.Windows.Forms.Cursors.Hand;
+            this._btnDeTaiTT.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._btnDeTaiTT.Image = global::QuanLySinhVien.Properties.Resources.abc;
+            this._btnDeTaiTT.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this._btnDeTaiTT.Location = new System.Drawing.Point(181, 12);
+            this._btnDeTaiTT.Name = "_btnDeTaiTT";
+            this._btnDeTaiTT.Size = new System.Drawing.Size(100, 60);
+            this._btnDeTaiTT.TabIndex = 5;
+            this._btnDeTaiTT.Text = "Đề tài thực tập";
+            this._btnDeTaiTT.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this._btnDeTaiTT.Click += new System.EventHandler(this.OnBtnDeTaiTTClick);
+            this._btnDeTaiTT.MouseLeave += new System.EventHandler(this.OnLblDeTaiTTMouseLeave);
+            this._btnDeTaiTT.MouseMove += new System.Windows.Forms.MouseEventHandler(this.OnLblDeTaiTTMouseMove);
             // 
-            // _lblDangKyDeTai
+            // _btnDangKyDeTai
             // 
-            this._lblDangKyDeTai.BackColor = System.Drawing.Color.Transparent;
-            this._lblDangKyDeTai.Cursor = System.Windows.Forms.Cursors.Hand;
-            this._lblDangKyDeTai.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._lblDangKyDeTai.Image = global::QuanLySinhVien.Properties.Resources.clipboard_paste1;
-            this._lblDangKyDeTai.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this._lblDangKyDeTai.Location = new System.Drawing.Point(287, 12);
-            this._lblDangKyDeTai.Name = "_lblDangKyDeTai";
-            this._lblDangKyDeTai.Size = new System.Drawing.Size(100, 60);
-            this._lblDangKyDeTai.TabIndex = 4;
-            this._lblDangKyDeTai.Text = "Đăng ký đề tai";
-            this._lblDangKyDeTai.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this._lblDangKyDeTai.MouseLeave += new System.EventHandler(this.OnLblDangKyDeTaiMouseLeave);
-            this._lblDangKyDeTai.MouseMove += new System.Windows.Forms.MouseEventHandler(this.OnLblDangKyDeTaiMouseMove);
+            this._btnDangKyDeTai.BackColor = System.Drawing.Color.Transparent;
+            this._btnDangKyDeTai.Cursor = System.Windows.Forms.Cursors.Hand;
+            this._btnDangKyDeTai.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._btnDangKyDeTai.Image = global::QuanLySinhVien.Properties.Resources.clipboard_paste1;
+            this._btnDangKyDeTai.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this._btnDangKyDeTai.Location = new System.Drawing.Point(287, 12);
+            this._btnDangKyDeTai.Name = "_btnDangKyDeTai";
+            this._btnDangKyDeTai.Size = new System.Drawing.Size(100, 60);
+            this._btnDangKyDeTai.TabIndex = 4;
+            this._btnDangKyDeTai.Text = "Đăng ký đề tai";
+            this._btnDangKyDeTai.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this._btnDangKyDeTai.Click += new System.EventHandler(this.OnBtnDangKyDeTaiClick);
+            this._btnDangKyDeTai.MouseLeave += new System.EventHandler(this.OnLblDangKyDeTaiMouseLeave);
+            this._btnDangKyDeTai.MouseMove += new System.Windows.Forms.MouseEventHandler(this.OnLblDangKyDeTaiMouseMove);
             // 
-            // _lblHuyDeTai
+            // _btnHuyDeTai
             // 
-            this._lblHuyDeTai.BackColor = System.Drawing.Color.Transparent;
-            this._lblHuyDeTai.Cursor = System.Windows.Forms.Cursors.Hand;
-            this._lblHuyDeTai.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._lblHuyDeTai.Image = global::QuanLySinhVien.Properties.Resources.clipboard_paste;
-            this._lblHuyDeTai.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this._lblHuyDeTai.Location = new System.Drawing.Point(393, 12);
-            this._lblHuyDeTai.Name = "_lblHuyDeTai";
-            this._lblHuyDeTai.Size = new System.Drawing.Size(100, 60);
-            this._lblHuyDeTai.TabIndex = 3;
-            this._lblHuyDeTai.Text = "Hủy đề tài";
-            this._lblHuyDeTai.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this._lblHuyDeTai.MouseLeave += new System.EventHandler(this.OnLblHuyDeTaiMouseLeave);
-            this._lblHuyDeTai.MouseMove += new System.Windows.Forms.MouseEventHandler(this.OnLblHuyDeTaiMouseMove);
+            this._btnHuyDeTai.BackColor = System.Drawing.Color.Transparent;
+            this._btnHuyDeTai.Cursor = System.Windows.Forms.Cursors.Hand;
+            this._btnHuyDeTai.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._btnHuyDeTai.Image = global::QuanLySinhVien.Properties.Resources.clipboard_paste;
+            this._btnHuyDeTai.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this._btnHuyDeTai.Location = new System.Drawing.Point(393, 12);
+            this._btnHuyDeTai.Name = "_btnHuyDeTai";
+            this._btnHuyDeTai.Size = new System.Drawing.Size(100, 60);
+            this._btnHuyDeTai.TabIndex = 3;
+            this._btnHuyDeTai.Text = "Hủy đề tài";
+            this._btnHuyDeTai.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this._btnHuyDeTai.Click += new System.EventHandler(this.OnBtnHuyDeTaiClick);
+            this._btnHuyDeTai.MouseLeave += new System.EventHandler(this.OnLblHuyDeTaiMouseLeave);
+            this._btnHuyDeTai.MouseMove += new System.Windows.Forms.MouseEventHandler(this.OnLblHuyDeTaiMouseMove);
             // 
-            // _lblDiem
+            // _btnDiem
             // 
-            this._lblDiem.BackColor = System.Drawing.Color.Transparent;
-            this._lblDiem.Cursor = System.Windows.Forms.Cursors.Hand;
-            this._lblDiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._lblDiem.Image = global::QuanLySinhVien.Properties.Resources.e;
-            this._lblDiem.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this._lblDiem.Location = new System.Drawing.Point(509, 12);
-            this._lblDiem.Name = "_lblDiem";
-            this._lblDiem.Size = new System.Drawing.Size(100, 60);
-            this._lblDiem.TabIndex = 2;
-            this._lblDiem.Text = "Điểm thực tập";
-            this._lblDiem.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this._lblDiem.MouseLeave += new System.EventHandler(this.OnLblDiemMouseLeave);
-            this._lblDiem.MouseMove += new System.Windows.Forms.MouseEventHandler(this.OnLblDiemMouseMove);
+            this._btnDiem.BackColor = System.Drawing.Color.Transparent;
+            this._btnDiem.Cursor = System.Windows.Forms.Cursors.Hand;
+            this._btnDiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._btnDiem.Image = global::QuanLySinhVien.Properties.Resources.e;
+            this._btnDiem.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this._btnDiem.Location = new System.Drawing.Point(509, 12);
+            this._btnDiem.Name = "_btnDiem";
+            this._btnDiem.Size = new System.Drawing.Size(100, 60);
+            this._btnDiem.TabIndex = 2;
+            this._btnDiem.Text = "Điểm thực tập";
+            this._btnDiem.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this._btnDiem.Click += new System.EventHandler(this.OnBtnDiemClick);
+            this._btnDiem.MouseLeave += new System.EventHandler(this.OnLblDiemMouseLeave);
+            this._btnDiem.MouseMove += new System.Windows.Forms.MouseEventHandler(this.OnLblDiemMouseMove);
             // 
-            // _lblSinhVienTT
+            // _btnSinhVienTT
             // 
-            this._lblSinhVienTT.BackColor = System.Drawing.Color.Transparent;
-            this._lblSinhVienTT.Cursor = System.Windows.Forms.Cursors.Hand;
-            this._lblSinhVienTT.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._lblSinhVienTT.Image = global::QuanLySinhVien.Properties.Resources.f;
-            this._lblSinhVienTT.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this._lblSinhVienTT.Location = new System.Drawing.Point(613, 12);
-            this._lblSinhVienTT.Name = "_lblSinhVienTT";
-            this._lblSinhVienTT.Size = new System.Drawing.Size(100, 60);
-            this._lblSinhVienTT.TabIndex = 1;
-            this._lblSinhVienTT.Text = "SV thực tập";
-            this._lblSinhVienTT.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this._lblSinhVienTT.MouseLeave += new System.EventHandler(this.OnLblSinhVienTTMouseLeave);
-            this._lblSinhVienTT.MouseMove += new System.Windows.Forms.MouseEventHandler(this.OnLblSinhVienTTMouseMove);
+            this._btnSinhVienTT.BackColor = System.Drawing.Color.Transparent;
+            this._btnSinhVienTT.Cursor = System.Windows.Forms.Cursors.Hand;
+            this._btnSinhVienTT.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._btnSinhVienTT.Image = global::QuanLySinhVien.Properties.Resources.f;
+            this._btnSinhVienTT.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this._btnSinhVienTT.Location = new System.Drawing.Point(613, 12);
+            this._btnSinhVienTT.Name = "_btnSinhVienTT";
+            this._btnSinhVienTT.Size = new System.Drawing.Size(100, 60);
+            this._btnSinhVienTT.TabIndex = 1;
+            this._btnSinhVienTT.Text = "SV thực tập";
+            this._btnSinhVienTT.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this._btnSinhVienTT.Click += new System.EventHandler(this.OnBtnSinhVienTTClick);
+            this._btnSinhVienTT.MouseLeave += new System.EventHandler(this.OnLblSinhVienTTMouseLeave);
+            this._btnSinhVienTT.MouseMove += new System.Windows.Forms.MouseEventHandler(this.OnLblSinhVienTTMouseMove);
             // 
-            // _lblGiaoVienHD
+            // _btnGiaoVienHD
             // 
-            this._lblGiaoVienHD.BackColor = System.Drawing.Color.Transparent;
-            this._lblGiaoVienHD.Cursor = System.Windows.Forms.Cursors.Hand;
-            this._lblGiaoVienHD.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._lblGiaoVienHD.Image = global::QuanLySinhVien.Properties.Resources.d;
-            this._lblGiaoVienHD.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this._lblGiaoVienHD.Location = new System.Drawing.Point(719, 12);
-            this._lblGiaoVienHD.Name = "_lblGiaoVienHD";
-            this._lblGiaoVienHD.Size = new System.Drawing.Size(100, 60);
-            this._lblGiaoVienHD.TabIndex = 0;
-            this._lblGiaoVienHD.Text = "GV hướng dẫn";
-            this._lblGiaoVienHD.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this._lblGiaoVienHD.MouseLeave += new System.EventHandler(this.OnLblGiaoVienHDMouseLeave);
-            this._lblGiaoVienHD.MouseMove += new System.Windows.Forms.MouseEventHandler(this.OnLblGiaoVienHDMouseMove);
+            this._btnGiaoVienHD.BackColor = System.Drawing.Color.Transparent;
+            this._btnGiaoVienHD.Cursor = System.Windows.Forms.Cursors.Hand;
+            this._btnGiaoVienHD.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._btnGiaoVienHD.Image = global::QuanLySinhVien.Properties.Resources.d;
+            this._btnGiaoVienHD.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this._btnGiaoVienHD.Location = new System.Drawing.Point(719, 12);
+            this._btnGiaoVienHD.Name = "_btnGiaoVienHD";
+            this._btnGiaoVienHD.Size = new System.Drawing.Size(100, 60);
+            this._btnGiaoVienHD.TabIndex = 0;
+            this._btnGiaoVienHD.Text = "GV hướng dẫn";
+            this._btnGiaoVienHD.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this._btnGiaoVienHD.Click += new System.EventHandler(this.OnBtnGiaoVienHDClick);
+            this._btnGiaoVienHD.MouseLeave += new System.EventHandler(this.OnLblGiaoVienHDMouseLeave);
+            this._btnGiaoVienHD.MouseMove += new System.Windows.Forms.MouseEventHandler(this.OnLblGiaoVienHDMouseMove);
             // 
             // _menuTaiKhoan
             // 
@@ -301,7 +322,7 @@
             this._taiKhoan});
             this._menuTaiKhoan.Location = new System.Drawing.Point(19, 48);
             this._menuTaiKhoan.Name = "_menuTaiKhoan";
-            this._menuTaiKhoan.Size = new System.Drawing.Size(88, 24);
+            this._menuTaiKhoan.Size = new System.Drawing.Size(180, 24);
             this._menuTaiKhoan.TabIndex = 8;
             this._menuTaiKhoan.Text = "menuStrip1";
             // 
@@ -321,12 +342,15 @@
             this._menuThayDoiMK.Name = "_menuThayDoiMK";
             this._menuThayDoiMK.Size = new System.Drawing.Size(186, 22);
             this._menuThayDoiMK.Text = "Thay đổi mật khẩu";
+            this._menuThayDoiMK.Click += new System.EventHandler(this.OnMenuThayDoiMKClick);
             // 
             // _menuDangXuat
             // 
+            this._menuDangXuat.Image = global::QuanLySinhVien.Properties.Resources.logout_2;
             this._menuDangXuat.Name = "_menuDangXuat";
             this._menuDangXuat.Size = new System.Drawing.Size(186, 22);
             this._menuDangXuat.Text = "Đăng xuất";
+            this._menuDangXuat.Click += new System.EventHandler(this.OnMenuDangXuatClick);
             // 
             // _panelMain
             // 
@@ -376,20 +400,21 @@
         private System.Windows.Forms.Button _btnTroVe;
         private System.Windows.Forms.Label _lbTime;
         private System.Windows.Forms.Panel _panelTopRight;
-        private System.Windows.Forms.Label _lblBaoCao;
-        private System.Windows.Forms.Label _lblTroGiup;
-        private System.Windows.Forms.Label _lblDeTaiTT;
-        private System.Windows.Forms.Label _lblDangKyDeTai;
-        private System.Windows.Forms.Label _lblHuyDeTai;
-        private System.Windows.Forms.Label _lblDiem;
-        private System.Windows.Forms.Label _lblSinhVienTT;
-        private System.Windows.Forms.Label _lblGiaoVienHD;
+        private System.Windows.Forms.Label _btnBaoCao;
+        private System.Windows.Forms.Label _btnTroGiup;
+        private System.Windows.Forms.Label _btnDeTaiTT;
+        private System.Windows.Forms.Label _btnDangKyDeTai;
+        private System.Windows.Forms.Label _btnHuyDeTai;
+        private System.Windows.Forms.Label _btnDiem;
+        private System.Windows.Forms.Label _btnSinhVienTT;
+        private System.Windows.Forms.Label _btnGiaoVienHD;
         private System.Windows.Forms.Panel _panelMain;
         private System.Windows.Forms.MenuStrip _menuTaiKhoan;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ToolStripMenuItem _taiKhoan;
         private System.Windows.Forms.ToolStripMenuItem _menuThayDoiMK;
         private System.Windows.Forms.ToolStripMenuItem _menuDangXuat;
+        private System.Windows.Forms.Label _lbScreenInfo;
     }
 }
 
