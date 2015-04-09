@@ -17,7 +17,7 @@ namespace QuanLySinhVien
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-             MainForm = new MainStuden();
+             MainForm = new MainStudent();
             Application.Run(new DangNhap());
             //Application.Run(MainForm);
         }

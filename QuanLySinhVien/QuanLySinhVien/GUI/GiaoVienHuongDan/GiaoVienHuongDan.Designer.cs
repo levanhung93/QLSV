@@ -38,7 +38,6 @@
             this._txtTimKiemGiaoVienHD = new System.Windows.Forms.TextBox();
             this._btnLuuGV = new System.Windows.Forms.Label();
             this._btnXoaGV = new System.Windows.Forms.Label();
-            this._btnSuaGV = new System.Windows.Forms.Label();
             this._btnThemGV = new System.Windows.Forms.Label();
             this._cboMaGiaoVienHD = new System.Windows.Forms.ComboBox();
             this._txtTenGiaoVienHD = new System.Windows.Forms.TextBox();
@@ -47,6 +46,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this._grbThongTinGiaoVienHD = new System.Windows.Forms.GroupBox();
+            this._txtNamSinhGV = new System.Windows.Forms.TextBox();
+            this._txtThangSinhGV = new System.Windows.Forms.TextBox();
+            this._txtNgaySinhGV = new System.Windows.Forms.TextBox();
             this._txtEmailGV = new System.Windows.Forms.TextBox();
             this._txtDienThoaiGV = new System.Windows.Forms.TextBox();
             this._txtDiachiGV = new System.Windows.Forms.TextBox();
@@ -67,9 +69,6 @@
             this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._txtTongBanGhi = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this._txtNgaySinhGV = new System.Windows.Forms.TextBox();
-            this._txtThangSinhGV = new System.Windows.Forms.TextBox();
-            this._txtNamSinhGV = new System.Windows.Forms.TextBox();
             this._grbThongTinGiaoVienHD.SuspendLayout();
             this._grbDatGiaoVien.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._dgvGiaoVien)).BeginInit();
@@ -145,20 +144,21 @@
             this._btnLuuGV.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this._btnLuuGV.Cursor = System.Windows.Forms.Cursors.Hand;
             this._btnLuuGV.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._btnLuuGV.Location = new System.Drawing.Point(784, 240);
+            this._btnLuuGV.Location = new System.Drawing.Point(708, 240);
             this._btnLuuGV.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this._btnLuuGV.Name = "_btnLuuGV";
             this._btnLuuGV.Size = new System.Drawing.Size(125, 39);
             this._btnLuuGV.TabIndex = 20;
             this._btnLuuGV.Text = "Lưu giáo viên";
             this._btnLuuGV.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this._btnLuuGV.Click += new System.EventHandler(this.OnBtnLuuGVClick);
             // 
             // _btnXoaGV
             // 
             this._btnXoaGV.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this._btnXoaGV.Cursor = System.Windows.Forms.Cursors.Hand;
             this._btnXoaGV.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._btnXoaGV.Location = new System.Drawing.Point(578, 240);
+            this._btnXoaGV.Location = new System.Drawing.Point(480, 240);
             this._btnXoaGV.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this._btnXoaGV.Name = "_btnXoaGV";
             this._btnXoaGV.Size = new System.Drawing.Size(125, 39);
@@ -166,39 +166,31 @@
             this._btnXoaGV.Text = "Xóa giáo viên";
             this._btnXoaGV.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // _btnSuaGV
-            // 
-            this._btnSuaGV.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this._btnSuaGV.Cursor = System.Windows.Forms.Cursors.Hand;
-            this._btnSuaGV.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._btnSuaGV.Location = new System.Drawing.Point(355, 240);
-            this._btnSuaGV.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this._btnSuaGV.Name = "_btnSuaGV";
-            this._btnSuaGV.Size = new System.Drawing.Size(125, 39);
-            this._btnSuaGV.TabIndex = 18;
-            this._btnSuaGV.Text = "Sửa giáo viên";
-            this._btnSuaGV.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // _btnThemGV
             // 
             this._btnThemGV.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this._btnThemGV.Cursor = System.Windows.Forms.Cursors.Hand;
             this._btnThemGV.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._btnThemGV.Location = new System.Drawing.Point(132, 240);
+            this._btnThemGV.Location = new System.Drawing.Point(239, 236);
             this._btnThemGV.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this._btnThemGV.Name = "_btnThemGV";
             this._btnThemGV.Size = new System.Drawing.Size(125, 39);
             this._btnThemGV.TabIndex = 17;
             this._btnThemGV.Text = "Thêm giáo viên";
             this._btnThemGV.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this._btnThemGV.Click += new System.EventHandler(this.OnBtnThemGVClick);
             // 
             // _cboMaGiaoVienHD
             // 
+            this._cboMaGiaoVienHD.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this._cboMaGiaoVienHD.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this._cboMaGiaoVienHD.Enabled = false;
             this._cboMaGiaoVienHD.FormattingEnabled = true;
             this._cboMaGiaoVienHD.Location = new System.Drawing.Point(190, 34);
             this._cboMaGiaoVienHD.Name = "_cboMaGiaoVienHD";
             this._cboMaGiaoVienHD.Size = new System.Drawing.Size(221, 24);
             this._cboMaGiaoVienHD.TabIndex = 7;
+            this._cboMaGiaoVienHD.SelectedIndexChanged += new System.EventHandler(this.OnCboMaGiaoVienSelectedIndexChanged);
             // 
             // _txtTenGiaoVienHD
             // 
@@ -268,6 +260,30 @@
             this._grbThongTinGiaoVienHD.TabIndex = 14;
             this._grbThongTinGiaoVienHD.TabStop = false;
             this._grbThongTinGiaoVienHD.Text = "Thông tin giáo viên hướng dẫn";
+            // 
+            // _txtNamSinhGV
+            // 
+            this._txtNamSinhGV.Enabled = false;
+            this._txtNamSinhGV.Location = new System.Drawing.Point(347, 100);
+            this._txtNamSinhGV.Name = "_txtNamSinhGV";
+            this._txtNamSinhGV.Size = new System.Drawing.Size(66, 22);
+            this._txtNamSinhGV.TabIndex = 21;
+            // 
+            // _txtThangSinhGV
+            // 
+            this._txtThangSinhGV.Enabled = false;
+            this._txtThangSinhGV.Location = new System.Drawing.Point(267, 100);
+            this._txtThangSinhGV.Name = "_txtThangSinhGV";
+            this._txtThangSinhGV.Size = new System.Drawing.Size(66, 22);
+            this._txtThangSinhGV.TabIndex = 20;
+            // 
+            // _txtNgaySinhGV
+            // 
+            this._txtNgaySinhGV.Enabled = false;
+            this._txtNgaySinhGV.Location = new System.Drawing.Point(190, 100);
+            this._txtNgaySinhGV.Name = "_txtNgaySinhGV";
+            this._txtNgaySinhGV.Size = new System.Drawing.Size(66, 22);
+            this._txtNgaySinhGV.TabIndex = 19;
             // 
             // _txtEmailGV
             // 
@@ -360,54 +376,63 @@
             // 
             // Column5
             // 
+            this.Column5.DataPropertyName = "MaGV";
             this.Column5.HeaderText = "Mã giáo viên";
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
             // 
             // Column6
             // 
+            this.Column6.DataPropertyName = "TenGV";
             this.Column6.HeaderText = "Tên giáo viên";
             this.Column6.Name = "Column6";
             this.Column6.ReadOnly = true;
             // 
             // Column7
             // 
+            this.Column7.DataPropertyName = "Ngay";
             this.Column7.HeaderText = "Ngày sinh";
             this.Column7.Name = "Column7";
             this.Column7.ReadOnly = true;
             // 
             // Column8
             // 
+            this.Column8.DataPropertyName = "Thang";
             this.Column8.HeaderText = "Tháng sinh";
             this.Column8.Name = "Column8";
             this.Column8.ReadOnly = true;
             // 
             // Column9
             // 
+            this.Column9.DataPropertyName = "Nam";
             this.Column9.HeaderText = "Năm sinh";
             this.Column9.Name = "Column9";
             this.Column9.ReadOnly = true;
             // 
             // Column10
             // 
+            this.Column10.DataPropertyName = "GioiTinh";
             this.Column10.HeaderText = "Giới tính";
             this.Column10.Name = "Column10";
             this.Column10.ReadOnly = true;
             // 
             // Column11
             // 
+            this.Column11.DataPropertyName = "DiaChi";
             this.Column11.HeaderText = "Địa chỉ";
             this.Column11.Name = "Column11";
             this.Column11.ReadOnly = true;
             // 
             // Column12
             // 
+            this.Column12.DataPropertyName = "DienThoai";
             this.Column12.HeaderText = "Điện thoại";
             this.Column12.Name = "Column12";
             this.Column12.ReadOnly = true;
             // 
             // Column13
             // 
+            this.Column13.DataPropertyName = "Email";
             this.Column13.HeaderText = "Email";
             this.Column13.Name = "Column13";
             this.Column13.ReadOnly = true;
@@ -429,30 +454,6 @@
             this.label11.TabIndex = 31;
             this.label11.Text = "Tổng số bản ghi";
             // 
-            // _txtNgaySinhGV
-            // 
-            this._txtNgaySinhGV.Enabled = false;
-            this._txtNgaySinhGV.Location = new System.Drawing.Point(190, 100);
-            this._txtNgaySinhGV.Name = "_txtNgaySinhGV";
-            this._txtNgaySinhGV.Size = new System.Drawing.Size(66, 22);
-            this._txtNgaySinhGV.TabIndex = 19;
-            // 
-            // _txtThangSinhGV
-            // 
-            this._txtThangSinhGV.Enabled = false;
-            this._txtThangSinhGV.Location = new System.Drawing.Point(267, 100);
-            this._txtThangSinhGV.Name = "_txtThangSinhGV";
-            this._txtThangSinhGV.Size = new System.Drawing.Size(66, 22);
-            this._txtThangSinhGV.TabIndex = 20;
-            // 
-            // _txtNamSinhGV
-            // 
-            this._txtNamSinhGV.Enabled = false;
-            this._txtNamSinhGV.Location = new System.Drawing.Point(347, 100);
-            this._txtNamSinhGV.Name = "_txtNamSinhGV";
-            this._txtNamSinhGV.Size = new System.Drawing.Size(66, 22);
-            this._txtNamSinhGV.TabIndex = 21;
-            // 
             // GiaoVienHuongDan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -465,7 +466,6 @@
             this.Controls.Add(this._txtTimKiemGiaoVienHD);
             this.Controls.Add(this._btnLuuGV);
             this.Controls.Add(this._btnXoaGV);
-            this.Controls.Add(this._btnSuaGV);
             this.Controls.Add(this._btnThemGV);
             this.Controls.Add(this._grbThongTinGiaoVienHD);
             this.Controls.Add(this.label1);
@@ -473,6 +473,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "GiaoVienHuongDan";
             this.Size = new System.Drawing.Size(1024, 486);
+            this.Load += new System.EventHandler(this.OnGiaoVienHuongDanLoad);
             this._grbThongTinGiaoVienHD.ResumeLayout(false);
             this._grbThongTinGiaoVienHD.PerformLayout();
             this._grbDatGiaoVien.ResumeLayout(false);
@@ -494,7 +495,6 @@
         private System.Windows.Forms.TextBox _txtTimKiemGiaoVienHD;
         private System.Windows.Forms.Label _btnLuuGV;
         private System.Windows.Forms.Label _btnXoaGV;
-        private System.Windows.Forms.Label _btnSuaGV;
         private System.Windows.Forms.Label _btnThemGV;
         private System.Windows.Forms.ComboBox _cboMaGiaoVienHD;
         private System.Windows.Forms.TextBox _txtTenGiaoVienHD;
@@ -512,6 +512,11 @@
         private System.Windows.Forms.TextBox _txtEmailGV;
         private System.Windows.Forms.TextBox _txtDienThoaiGV;
         private System.Windows.Forms.TextBox _txtDiachiGV;
+        private System.Windows.Forms.TextBox _txtTongBanGhi;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox _txtNamSinhGV;
+        private System.Windows.Forms.TextBox _txtThangSinhGV;
+        private System.Windows.Forms.TextBox _txtNgaySinhGV;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
@@ -521,10 +526,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column13;
-        private System.Windows.Forms.TextBox _txtTongBanGhi;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox _txtNamSinhGV;
-        private System.Windows.Forms.TextBox _txtThangSinhGV;
-        private System.Windows.Forms.TextBox _txtNgaySinhGV;
     }
 }

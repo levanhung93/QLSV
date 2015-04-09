@@ -31,8 +31,6 @@ namespace QuanLySinhVien.Common
         public enum ScreenID
         {
             None,
-            DangNhapScreen,
-            ThayDoiMatKhauScreen,
             SinhVienThucTapScreen,
             GiaoVienHuongDanScreen,
             DeTaiThucTapScreen,
@@ -65,10 +63,6 @@ namespace QuanLySinhVien.Common
                 /// </summary>
                 ChangeScreen,
 
-                /// <summary>
-                /// Event thay đổi người sử dụng
-                /// </summary>
-                ChangeUser,
             }
              /// <summary>
              /// ID của event
@@ -105,12 +99,12 @@ namespace QuanLySinhVien.Common
             UserControl userControl = GetIntanceScreen(screenID);
 
             //Lấy ra form main hiện hành
-            MainStuden mainStuden = Program.MainForm as MainStuden;
+            MainStudent mainStudent = Program.MainForm as MainStudent;
 
-            if (mainStuden != null)
+            if (mainStudent != null)
             {
                 //Thay đổi màn hình
-                mainStuden.ChangeControlOfPanel(userControl);
+                mainStudent.ChangeControlOfPanel(userControl);
 
                 //Thông báo đến cho các màn hình khác là có sự thay đổi màn hình
                 SendInternalEvent(new GuiEventID()
@@ -213,10 +207,10 @@ namespace QuanLySinhVien.Common
             }
         }
 
-        public static MainStuden GetMainStuden()
+        public static MainStudent GetMainStuden()
         {
-            MainStuden mainStuden = Program.MainForm as MainStuden;
-            return mainStuden;
+            MainStudent mainStudent = Program.MainForm as MainStudent;
+            return mainStudent;
         }
 
         /// <summary>

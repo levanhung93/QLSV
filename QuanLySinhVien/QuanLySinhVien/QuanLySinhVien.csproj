@@ -31,6 +31,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup />
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -44,10 +45,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Common\chuoi.cs" />
     <Compile Include="Common\DatabaseCore.cs" />
     <Compile Include="Common\DatabaseCorePartial.cs" />
+    <Compile Include="Common\DialogContent_OK.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Common\DialogContent_OK.Designer.cs">
+      <DependentUpon>DialogContent_OK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\DialogContent_YESNO.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Common\DialogContent_YESNO.Designer.cs">
+      <DependentUpon>DialogContent_YESNO.cs</DependentUpon>
+    </Compile>
     <Compile Include="Common\GuiResInfoMng.cs" />
+    <Compile Include="Common\MessageDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Common\MessageDialog.Designer.cs">
+      <DependentUpon>MessageDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\BangDiem\BangDiem.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -72,12 +90,18 @@
     <Compile Include="GUI\DangNhap\DangNhap.Designer.cs">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\DangNhap\DangNhapController.cs" />
+    <Compile Include="GUI\DangNhap\TaiKhoanAttribute.cs" />
     <Compile Include="GUI\DeTaiThucTap\DeTaiThucTap.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="GUI\DeTaiThucTap\DeTaiThucTap.Designer.cs">
       <DependentUpon>DeTaiThucTap.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\DeTaiThucTap\DeTaiThucTapAttribute.cs" />
+    <Compile Include="GUI\DeTaiThucTap\DeTaiThucTapController.cs" />
+    <Compile Include="GUI\GiaoVienHuongDan\GiaoVienAttribute.cs" />
+    <Compile Include="GUI\GiaoVienHuongDan\GiaoVienController.cs" />
     <Compile Include="GUI\GiaoVienHuongDan\GiaoVienHuongDan.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -90,12 +114,14 @@
     <Compile Include="GUI\HuyDeTaiDangKy\HuyDeTaiDangKy.Designer.cs">
       <DependentUpon>HuyDeTaiDangKy.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\MainStuden\MainStuden.cs">
+    <Compile Include="GUI\MainStudent\MainStudent.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\MainStuden\MainStuden.Designer.cs">
-      <DependentUpon>MainStuden.cs</DependentUpon>
+    <Compile Include="GUI\MainStudent\MainStudent.Designer.cs">
+      <DependentUpon>MainStudent.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\SinhVienThucTap\SinhVienAttribute.cs" />
+    <Compile Include="GUI\SinhVienThucTap\SinhVienController.cs" />
     <Compile Include="GUI\SinhVienThucTap\SinhVienThucTap.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -108,6 +134,8 @@
     <Compile Include="GUI\ThayDoiMatKhau\ThayDoiMatKhau.Designer.cs">
       <DependentUpon>ThayDoiMatKhau.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\ThayDoiMatKhau\ThayDoiMatKhauAttribute.cs" />
+    <Compile Include="GUI\ThayDoiMatKhau\ThayDoiMatKhauController.cs" />
     <Compile Include="GUI\TroGiup\TroGiup.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -116,6 +144,15 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Common\DialogContent_OK.resx">
+      <DependentUpon>DialogContent_OK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\DialogContent_YESNO.resx">
+      <DependentUpon>DialogContent_YESNO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\MessageDialog.resx">
+      <DependentUpon>MessageDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\BangDiem\BangDiem.resx">
       <DependentUpon>BangDiem.cs</DependentUpon>
     </EmbeddedResource>
@@ -137,8 +174,8 @@
     <EmbeddedResource Include="GUI\HuyDeTaiDangKy\HuyDeTaiDangKy.resx">
       <DependentUpon>HuyDeTaiDangKy.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\MainStuden\MainStuden.resx">
-      <DependentUpon>MainStuden.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\MainStudent\MainStudent.resx">
+      <DependentUpon>MainStudent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\SinhVienThucTap\SinhVienThucTap.resx">
       <DependentUpon>SinhVienThucTap.cs</DependentUpon>

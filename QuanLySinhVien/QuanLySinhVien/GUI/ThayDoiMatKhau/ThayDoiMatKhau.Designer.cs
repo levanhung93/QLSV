@@ -38,6 +38,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this._txtMatKhauMoi = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this._txtNhapLaiMatKhauMoi = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this._pnlThayDoiMatKhau.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -92,10 +94,11 @@
             this._btnThayDoi.TabIndex = 14;
             this._btnThayDoi.Text = "Thay đổi";
             this._btnThayDoi.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this._btnThayDoi.Click += new System.EventHandler(this.OnBtnThayDoiClick);
             // 
             // _txtMatKhauCu
             // 
-            this._txtMatKhauCu.Location = new System.Drawing.Point(231, 119);
+            this._txtMatKhauCu.Location = new System.Drawing.Point(231, 107);
             this._txtMatKhauCu.Margin = new System.Windows.Forms.Padding(4);
             this._txtMatKhauCu.Name = "_txtMatKhauCu";
             this._txtMatKhauCu.PasswordChar = '*';
@@ -104,6 +107,7 @@
             // 
             // _txtTenDangNhap
             // 
+            this._txtTenDangNhap.Enabled = false;
             this._txtTenDangNhap.Location = new System.Drawing.Point(231, 75);
             this._txtTenDangNhap.Margin = new System.Windows.Forms.Padding(4);
             this._txtTenDangNhap.Name = "_txtTenDangNhap";
@@ -113,7 +117,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(98, 123);
+            this.label2.Location = new System.Drawing.Point(98, 111);
             this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(79, 16);
@@ -123,7 +127,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(57, 81);
+            this.label1.Location = new System.Drawing.Point(78, 78);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(99, 16);
@@ -132,7 +136,7 @@
             // 
             // _txtMatKhauMoi
             // 
-            this._txtMatKhauMoi.Location = new System.Drawing.Point(231, 163);
+            this._txtMatKhauMoi.Location = new System.Drawing.Point(231, 139);
             this._txtMatKhauMoi.Margin = new System.Windows.Forms.Padding(4);
             this._txtMatKhauMoi.Name = "_txtMatKhauMoi";
             this._txtMatKhauMoi.PasswordChar = '*';
@@ -142,18 +146,39 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(98, 167);
+            this.label3.Location = new System.Drawing.Point(90, 142);
             this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(87, 16);
             this.label3.TabIndex = 19;
             this.label3.Text = "Mật khẩu mới";
             // 
+            // _txtNhapLaiMatKhauMoi
+            // 
+            this._txtNhapLaiMatKhauMoi.Location = new System.Drawing.Point(231, 175);
+            this._txtNhapLaiMatKhauMoi.Margin = new System.Windows.Forms.Padding(4);
+            this._txtNhapLaiMatKhauMoi.Name = "_txtNhapLaiMatKhauMoi";
+            this._txtNhapLaiMatKhauMoi.PasswordChar = '*';
+            this._txtNhapLaiMatKhauMoi.Size = new System.Drawing.Size(273, 22);
+            this._txtNhapLaiMatKhauMoi.TabIndex = 24;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(34, 181);
+            this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(143, 16);
+            this.label4.TabIndex = 23;
+            this.label4.Text = "Nhập lại  mật khẩu mới";
+            // 
             // _frmThayDoiMatKhau
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(561, 291);
+            this.Controls.Add(this._txtNhapLaiMatKhauMoi);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this._txtMatKhauMoi);
             this.Controls.Add(this.label3);
             this.Controls.Add(this._btnHuyThayDoi);
@@ -169,6 +194,8 @@
             this.Name = "_frmThayDoiMatKhau";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ThayDoiMatKhau";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.OnThayDoiMatKhauFormClosing);
+            this.Load += new System.EventHandler(this.OnThayDoiMatKhauLoad);
             this._pnlThayDoiMatKhau.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -187,5 +214,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox _txtMatKhauMoi;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox _txtNhapLaiMatKhauMoi;
+        private System.Windows.Forms.Label label4;
     }
 }

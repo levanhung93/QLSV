@@ -34,34 +34,6 @@ namespace QuanLySinhVien.Common
         {
             string query = "CREATE TABLE SINHVIEN (MaSV VARCHAR(10),TenSV NVARCHAR(50),Ngay INT,Thang INT,Nam INT,DiaChi NVARCHAR(200),DienThoai NCHAR(11),GioiTinh NVARCHAR(5),Email NVARCHAR(200),MaLop VARCHAR(10) )";
             ExecuteQuery(query);
-
-           Random ranDom = new Random();
-            chuoi ch = new chuoi();
-            for (int i = 0; i < 300; i++)
-            {
-                string MaSV = "SV" + i.ToString("0000");
-                string TenSV = "SV NAME " + i.ToString("0000");
-                int Ngay = ranDom.Next(0,32);
-                int Thang = ranDom.Next(0,13);
-                int Nam = ranDom.Next(1945,ch.NamSinh() + 1);
-                string DiaChi = ch.RandomString(10, true);
-                string  DienThoai = ranDom.Next(999999999).ToString("00");
-                int GioiTinh = ranDom.Next(2);
-                string Email = ch.RandomString(10, true)+"@gmail.com";
-                string MaLop = "LOP" + i.ToString("0000");
-               query = string.Format("INSERT INTO SINHVIEN (MaSV, TenSV, Ngay, Thang, Nam, DiaChi, DienThoai, GioiTinh, Email, MaLop) VALUES ('{0}','{1}',{2},{3},'{4}','{5}','{6}','{7}','{8}','{9}')",
-                    MaSV,
-                    TenSV,
-                    Ngay,
-                    Thang,
-                    Nam,
-                    DiaChi,
-                    DienThoai,
-                    GioiTinh,
-                    Email,
-                    MaLop);
-                DatabaseCore.ExecuteQuery(query);
-            }
         }
 
         /// <summary>
@@ -69,7 +41,7 @@ namespace QuanLySinhVien.Common
         /// </summary>
         private static void CreateSinhVienThucTap()
         {
-            string query = "CREATE TABLE SINHVIEN (MaSV VARCHAR(10),TenSV NVARCHAR(50),Ngay INT,Thang INT,Nam INT,DiaChi NVARCHAR(200),DienThoai NCHAR(11),GioiTinh NVARCHAR(5),Email NVARCHAR(200),MaLop VARCHAR(10) )";
+            string query = "CREATE TABLE SINHVIENTHUCTAP (MaSV VARCHAR(10),TenSV NVARCHAR(50),Ngay INT,Thang INT,Nam INT,DiaChi NVARCHAR(200),DienThoai NCHAR(11),GioiTinh NVARCHAR(5),Email NVARCHAR(200),MaLop VARCHAR(10) )";
             ExecuteQuery(query);
         }
 
@@ -80,33 +52,6 @@ namespace QuanLySinhVien.Common
         {
             string query = "CREATE TABLE GIAOVIEN (MaGV VARCHAR(10),TenGV NVARCHAR(50),Ngay INT,Thang INT,Nam INT,DiaChi NVARCHAR(200),DienThoai NCHAR(11),GioiTinh NVARCHAR(5),Email NVARCHAR(200))";
             ExecuteQuery(query);
-
-           Random ranDom = new Random();
-            chuoi ch = new chuoi();
-            for (int i = 0; i < 300; i++)
-            {
-                string MaGV = "GV" + i.ToString("0000");
-                string TenGV = "GV NAME " + i.ToString("0000");
-                int Ngay = ranDom.Next(0, 32);
-                int Thang = ranDom.Next(0, 13);
-                int Nam = ranDom.Next(1945, ch.NamSinh() + 1);
-                string DiaChi = ch.RandomString(10, true);
-                string DienThoai = ranDom.Next(999999999).ToString("00");
-                int GioiTinh = ranDom.Next(2);
-                string Email = ch.RandomString(10, true) + "@gmail.com";
-                string MaLop = "LOP" + i.ToString("0000");
-                query = string.Format("INSERT INTO GIAOVIEN (MaGV, TenGV, Ngay, Thang, Nam, DiaChi, DienThoai, GioiTinh, Email) VALUES ('{0}','{1}',{2},{3},'{4}','{5}','{6}','{7}','{8}')",
-                     MaGV,
-                     TenGV,
-                     Ngay,
-                     Thang,
-                     Nam,
-                     DiaChi,
-                     DienThoai,
-                     GioiTinh,
-                     Email);
-                DatabaseCore.ExecuteQuery(query);
-            }
         }
 
         /// <summary>
@@ -114,7 +59,7 @@ namespace QuanLySinhVien.Common
         /// </summary>
         private static void CreateGiaoVienHuongDan()
         {
-            string query = "CREATE TABLE GIAOVIEN (MaGV VARCHAR(10),TenGV NVARCHAR(50),Ngay INT,Thang INT,Nam INT,DiaChi NVARCHAR(200),DienThoai NCHAR(11),GioiTinh NVARCHAR(5),Email NVARCHAR(200))";
+            string query = "CREATE TABLE GIAOVIENHUONGDAN (MaGV VARCHAR(10),TenGV NVARCHAR(50),Ngay INT,Thang INT,Nam INT,DiaChi NVARCHAR(200),DienThoai NCHAR(11),GioiTinh NVARCHAR(5),Email NVARCHAR(200))";
             ExecuteQuery(query);
         }
 

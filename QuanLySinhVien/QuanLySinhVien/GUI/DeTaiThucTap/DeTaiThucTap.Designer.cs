@@ -51,6 +51,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this._txtTimKiemDeTai = new System.Windows.Forms.TextBox();
             this._btnTimKiemDeTai = new System.Windows.Forms.Label();
+            this._txtTongBanGhi = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             this._grbThongTinDeTai.SuspendLayout();
             this._grbDataDeTai.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._dgvDeTai)).BeginInit();
@@ -84,11 +86,15 @@
             // 
             // _cboMaGiaoVienHD
             // 
+            this._cboMaGiaoVienHD.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this._cboMaGiaoVienHD.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this._cboMaGiaoVienHD.Enabled = false;
             this._cboMaGiaoVienHD.FormattingEnabled = true;
             this._cboMaGiaoVienHD.Location = new System.Drawing.Point(683, 34);
             this._cboMaGiaoVienHD.Name = "_cboMaGiaoVienHD";
             this._cboMaGiaoVienHD.Size = new System.Drawing.Size(221, 24);
             this._cboMaGiaoVienHD.TabIndex = 7;
+            this._cboMaGiaoVienHD.SelectedIndexChanged += new System.EventHandler(this.OnCboMaGiaoVienHDSelectedIndexChanged);
             // 
             // _txtTenGiaoVienHD
             // 
@@ -100,6 +106,7 @@
             // 
             // _txtTenDeTai
             // 
+            this._txtTenDeTai.Enabled = false;
             this._txtTenDeTai.Location = new System.Drawing.Point(187, 73);
             this._txtTenDeTai.Multiline = true;
             this._txtTenDeTai.Name = "_txtTenDeTai";
@@ -156,20 +163,21 @@
             this._btnThemDeTai.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this._btnThemDeTai.Cursor = System.Windows.Forms.Cursors.Hand;
             this._btnThemDeTai.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._btnThemDeTai.Location = new System.Drawing.Point(132, 247);
+            this._btnThemDeTai.Location = new System.Drawing.Point(132, 234);
             this._btnThemDeTai.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this._btnThemDeTai.Name = "_btnThemDeTai";
             this._btnThemDeTai.Size = new System.Drawing.Size(125, 39);
             this._btnThemDeTai.TabIndex = 9;
             this._btnThemDeTai.Text = "Thêm đề tài";
             this._btnThemDeTai.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this._btnThemDeTai.Click += new System.EventHandler(this.OnBtnThemDeTaiClick);
             // 
             // _btnSuaDeTai
             // 
             this._btnSuaDeTai.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this._btnSuaDeTai.Cursor = System.Windows.Forms.Cursors.Hand;
             this._btnSuaDeTai.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._btnSuaDeTai.Location = new System.Drawing.Point(355, 247);
+            this._btnSuaDeTai.Location = new System.Drawing.Point(355, 234);
             this._btnSuaDeTai.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this._btnSuaDeTai.Name = "_btnSuaDeTai";
             this._btnSuaDeTai.Size = new System.Drawing.Size(125, 39);
@@ -182,7 +190,7 @@
             this._btnXoaDeTai.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this._btnXoaDeTai.Cursor = System.Windows.Forms.Cursors.Hand;
             this._btnXoaDeTai.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._btnXoaDeTai.Location = new System.Drawing.Point(578, 247);
+            this._btnXoaDeTai.Location = new System.Drawing.Point(578, 234);
             this._btnXoaDeTai.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this._btnXoaDeTai.Name = "_btnXoaDeTai";
             this._btnXoaDeTai.Size = new System.Drawing.Size(125, 39);
@@ -195,18 +203,19 @@
             this._btnLuuDeTai.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this._btnLuuDeTai.Cursor = System.Windows.Forms.Cursors.Hand;
             this._btnLuuDeTai.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._btnLuuDeTai.Location = new System.Drawing.Point(784, 247);
+            this._btnLuuDeTai.Location = new System.Drawing.Point(784, 234);
             this._btnLuuDeTai.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this._btnLuuDeTai.Name = "_btnLuuDeTai";
             this._btnLuuDeTai.Size = new System.Drawing.Size(125, 39);
             this._btnLuuDeTai.TabIndex = 12;
             this._btnLuuDeTai.Text = "Lưu đề tài";
             this._btnLuuDeTai.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this._btnLuuDeTai.Click += new System.EventHandler(this.OnBtnLuuDeTaiClick);
             // 
             // _grbDataDeTai
             // 
             this._grbDataDeTai.Controls.Add(this._dgvDeTai);
-            this._grbDataDeTai.Location = new System.Drawing.Point(31, 298);
+            this._grbDataDeTai.Location = new System.Drawing.Point(31, 306);
             this._grbDataDeTai.Name = "_grbDataDeTai";
             this._grbDataDeTai.Size = new System.Drawing.Size(964, 173);
             this._grbDataDeTai.TabIndex = 8;
@@ -230,12 +239,14 @@
             // 
             // Column1
             // 
+            this.Column1.DataPropertyName = "MaDeTai";
             this.Column1.HeaderText = "Mã đề tài";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
             // 
             // Column2
             // 
+            this.Column2.DataPropertyName = "TenDeTai";
             this.Column2.HeaderText = "Tên đề tài";
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
@@ -243,6 +254,7 @@
             // 
             // Column3
             // 
+            this.Column3.DataPropertyName = "MaGV";
             this.Column3.HeaderText = "Mã giáo viên hướng dẫn";
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
@@ -250,6 +262,7 @@
             // 
             // Column4
             // 
+            this.Column4.DataPropertyName = "TenGV";
             this.Column4.HeaderText = "Tên giáo viên hướng dẫn";
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
@@ -284,10 +297,29 @@
             this._btnTimKiemDeTai.Text = "Tìm";
             this._btnTimKiemDeTai.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // _txtTongBanGhi
+            // 
+            this._txtTongBanGhi.Enabled = false;
+            this._txtTongBanGhi.Location = new System.Drawing.Point(303, 287);
+            this._txtTongBanGhi.Name = "_txtTongBanGhi";
+            this._txtTongBanGhi.Size = new System.Drawing.Size(82, 22);
+            this._txtTongBanGhi.TabIndex = 36;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(192, 287);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(105, 16);
+            this.label11.TabIndex = 35;
+            this.label11.Text = "Tổng số bản ghi";
+            // 
             // DeTaiThucTap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this._txtTongBanGhi);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this._btnTimKiemDeTai);
             this.Controls.Add(this._txtTimKiemDeTai);
             this.Controls.Add(this.label6);
@@ -329,12 +361,14 @@
         private System.Windows.Forms.Label _btnLuuDeTai;
         private System.Windows.Forms.GroupBox _grbDataDeTai;
         private System.Windows.Forms.DataGridView _dgvDeTai;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox _txtTimKiemDeTai;
+        private System.Windows.Forms.Label _btnTimKiemDeTai;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox _txtTimKiemDeTai;
-        private System.Windows.Forms.Label _btnTimKiemDeTai;
+        private System.Windows.Forms.TextBox _txtTongBanGhi;
+        private System.Windows.Forms.Label label11;
     }
 }

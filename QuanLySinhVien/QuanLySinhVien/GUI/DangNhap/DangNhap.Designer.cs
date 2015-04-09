@@ -98,7 +98,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(62, 85);
+            this.label1.Location = new System.Drawing.Point(66, 85);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(102, 16);
@@ -153,6 +153,7 @@
             this.Name = "DangNhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DangNhap";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.OnDangNhapFormClosing);
             this._panelDangNhap.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

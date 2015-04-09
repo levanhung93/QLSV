@@ -65,7 +65,6 @@ C:\Users\My PC\Desktop\QLSV\QuanLySinhVien\QuanLySinhVien\obj\Debug\QuanLySinhVi
 C:\Users\My PC\Desktop\QLSV\QuanLySinhVien\QuanLySinhVien\obj\Debug\QuanLySinhVien.GUI.DeTaiThucTap.resources
 C:\Users\My PC\Desktop\QLSV\QuanLySinhVien\QuanLySinhVien\obj\Debug\QuanLySinhVien.GUI.GiaoVienHuongDan.resources
 C:\Users\My PC\Desktop\QLSV\QuanLySinhVien\QuanLySinhVien\obj\Debug\QuanLySinhVien.GUI.HuyDeTaiDangKy.resources
-C:\Users\My PC\Desktop\QLSV\QuanLySinhVien\QuanLySinhVien\obj\Debug\QuanLySinhVien.MainStuden.resources
 C:\Users\My PC\Desktop\QLSV\QuanLySinhVien\QuanLySinhVien\obj\Debug\QuanLySinhVien.GUI.SinhVienThucTap.resources
 C:\Users\My PC\Desktop\QLSV\QuanLySinhVien\QuanLySinhVien\obj\Debug\QuanLySinhVien.Properties.Resources.resources
 C:\Users\My PC\Desktop\QLSV\QuanLySinhVien\QuanLySinhVien\obj\Debug\QuanLySinhVien.csproj.GenerateResource.Cache
@@ -74,3 +73,7 @@ C:\Users\My PC\Desktop\QLSV\QuanLySinhVien\QuanLySinhVien\bin\Debug\QuanLySinhVi
 C:\Users\My PC\Desktop\QLSV\QuanLySinhVien\QuanLySinhVien\bin\Debug\System.Data.SQLite.xml
 C:\Users\My PC\Desktop\QLSV\QuanLySinhVien\QuanLySinhVien\obj\Debug\QuanLySinhVien.GUI.TroGiup.resources
 C:\Users\My PC\Desktop\QLSV\QuanLySinhVien\QuanLySinhVien\obj\Debug\QuanLySinhVien.GUI._frmThayDoiMatKhau.resources
+C:\Users\My PC\Desktop\QLSV\QuanLySinhVien\QuanLySinhVien\obj\Debug\QuanLySinhVien.Common.DialogContent_OK.resources
+C:\Users\My PC\Desktop\QLSV\QuanLySinhVien\QuanLySinhVien\obj\Debug\QuanLySinhVien.Common.DialogContent_YESNO.resources
+C:\Users\My PC\Desktop\QLSV\QuanLySinhVien\QuanLySinhVien\obj\Debug\QuanLySinhVien.Common.MessageDialog.resources
+C:\Users\My PC\Desktop\QLSV\QuanLySinhVien\QuanLySinhVien\obj\Debug\QuanLySinhVien.MainStudent.resources

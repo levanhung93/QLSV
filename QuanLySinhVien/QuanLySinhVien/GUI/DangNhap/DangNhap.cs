@@ -19,24 +19,38 @@ namespace QuanLySinhVien.GUI
         private bool _isFirstRun = true;
         private bool _isMousePress = false;
         private Point _lastPoint;
+
+        /// <summary>
+        /// khởi tạo đối tượng tkAttribute
+        /// </summary>
+        TaiKhoanAttribute tkAttribute = new TaiKhoanAttribute();
+
+        /// <summary>
+        /// khởi tạo đối tượng dnController
+        /// </summary>
+        DangNhapController dnController = new DangNhapController();
         #endregion Field
 
-        #region Method
+        #region Constructor
         public DangNhap()
         {
             InitializeComponent();
         }
-        #endregion Method
+        #endregion Constructor
 
         #region Event
         private void OnCloseClick(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Close();
         }
 
         private void OnDangNhapClick(object sender, EventArgs e)
         {
-            if (_txtTenDangNhap.Text == "admin" && _txtMatKhau.Text == "1")
+
+            tkAttribute.TenDangNhap = _txtTenDangNhap.Text.Trim();
+            tkAttribute.MatKhau = _txtMatKhau.Text.Trim();
+
+            if (_txtTenDangNhap.Text!="" || _txtMatKhau.Text!="")
             {
                 if (_isFirstRun)
                 {
@@ -44,16 +58,44 @@ namespace QuanLySinhVien.GUI
                     Thread thread = new Thread(InitDatabase);
                     thread.Start();
                 }
-                MainStuden.userName = _txtTenDangNhap.Text;
-                MainStuden studen = new MainStuden();
-                studen.Show();
-                this.Hide();
+                if (dnController.GetTaiKhoan(tkAttribute).Rows.Count!=0)
+                {
+                    MainStudent.quyen = dnController.GetQuyen(tkAttribute).Rows[0][0].ToString();
+                    MainStudent.pass = dnController.GetTaiKhoan(tkAttribute).Rows[0][1].ToString();
+                    MainStudent.taiKhoan = dnController.GetTaiKhoan(tkAttribute).Rows[0][0].ToString();
+
+                    if (MainStudent.quyen=="SV")
+                    {
+                        MainStudent.userName = dnController.GetUserNameSinhVien(tkAttribute).Rows[0][0].ToString();
+                    }
+                    if (MainStudent.quyen=="GV")
+                    {
+                        MainStudent.userName = dnController.GetUserNameGiaoVien(tkAttribute).Rows[0][0].ToString();
+                    }
+                    if (MainStudent.quyen=="admin")
+                    {
+                        MainStudent.userName = dnController.GetTaiKhoan(tkAttribute).Rows[0][0].ToString();
+                    }
+                    MainStudent mainStudent = new MainStudent();
+                    mainStudent.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageDialog messageDialog = new MessageDialog(@"Bạn nhập sai thông tin tài khoản!", MessageDialog.DialogType.Ok);
+                    messageDialog.ShowDialog();
+                }
+            }
+            else
+            {
+                MessageDialog messageDialog = new MessageDialog(@"Bạn chưa nhập thông tin đăng nhập!", MessageDialog.DialogType.Ok);
+                messageDialog.ShowDialog();
             }
         }
 
         private void OnHuyClick(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Close();
         }
 
         private void OnCloseMouseMove(object sender, MouseEventArgs e)
@@ -88,6 +130,24 @@ namespace QuanLySinhVien.GUI
                 int scaleY = currentPoint.Y - _lastPoint.Y;
                 this.Location = new Point(mainLocation.X + scaleX, mainLocation.Y + scaleY);
             }
+        }
+
+        private void OnDangNhapFormClosing(object sender, FormClosingEventArgs e)
+        {
+            MessageDialog messageDialog = new MessageDialog(@"Bạn thực sự muốn thoát?", MessageDialog.DialogType.YesNo);
+            messageDialog.SendValueDelegate = delegate(MessageDialog.DialogResultType result)
+            {
+                if (result == MessageDialog.DialogResultType.No)
+                {
+                    e.Cancel = true;
+                }
+                else if (result == MessageDialog.DialogResultType.Yes)
+                {
+                    DatabaseCore.ReleaseConnect();
+                }
+
+            };
+            messageDialog.ShowDialog();
         }
         private void InitDatabase()
         {
