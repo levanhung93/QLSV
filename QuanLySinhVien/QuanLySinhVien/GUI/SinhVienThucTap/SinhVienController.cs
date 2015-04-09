@@ -26,7 +26,7 @@ namespace QuanLySinhVien.GUI
         /// <returns></returns>
         public DataTable GetFullSinhVien(SinhVienAttribute svAttribute)
         {
-            string query = "SELECT MaSV,TenSV,Ngay,Thang,Nam,GioiTinh,DiaChi,DienThoai,Email,TenLop,KhoaHoc FROM SINHVIEN,LOP,KHOAHOC WHERE MaSV='" + svAttribute.MaSV + "' AND SINHVIEN.MaLop=LOP.MaLop AND LOP.MaKhoa=KHOAHOC.MaKhoa";
+            string query = "SELECT * FROM SINHVIEN,LOP,KHOAHOC WHERE MaSV='" + svAttribute.MaSV + "' AND SINHVIEN.MaLop=LOP.MaLop AND LOP.MaKhoa=KHOAHOC.MaKhoa";
             return DatabaseCore.GetDatatable(query);
         }
 
@@ -56,7 +56,7 @@ namespace QuanLySinhVien.GUI
         /// <returns></returns>
        public DataTable ShowSinhVien()
         {
-            String query = "SELECT * FROM SINHVIENTHUCTAP";
+            String query = "SELECT MaSV, TenSV, Ngay, Thang, Nam, GioiTinh, DiaChi, DienThoai, TenLop, KhoaHoc, Email FROM SINHVIENTHUCTAP,LOP,KHOAHOC WHERE SINHVIENTHUCTAP.MaLop=LOP.MaLop AND LOP.MaKhoa=KHOAHOC.MaKhoa";
             return DatabaseCore.GetDatatable(query);
         }
 
