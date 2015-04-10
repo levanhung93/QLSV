@@ -5,6 +5,7 @@ using System.Drawing;
 using System.Data;
 using System.Text;
 using System.Windows.Forms;
+using QuanLySinhVien.Common;
 
 namespace QuanLySinhVien.GUI
 {
@@ -54,6 +55,32 @@ namespace QuanLySinhVien.GUI
             }
         }
 
+        private void _btnXoaGV_Click(object sender, EventArgs e)
+        {
+            if(_cboMaGiaoVienHD.Text=="")
+            {
+                MessageDialog messageDialog = new MessageDialog(@"Bạn chưa chọn thông tin cần xóa!", MessageDialog.DialogType.Ok);
+                messageDialog.ShowDialog();
+            }
+            else
+            {
+                gvAttribute.MaGV = _cboMaGiaoVienHD.Text;
+                MessageDialog messageDialog = new MessageDialog(@"Bạn chắc chắn muốn xóa?", MessageDialog.DialogType.YesNo);
+                messageDialog.SendValueDelegate = delegate(MessageDialog.DialogResultType result)
+                {
+                    if (result == MessageDialog.DialogResultType.Yes)
+                    {
+                        gvController.DeleteGiaoVienHD(gvAttribute);
+                        MessageDialog messageDialog1 = new MessageDialog(@"Xóa thành công!", MessageDialog.DialogType.Ok);
+                        messageDialog1.ShowDialog();
+                    }
+                };
+                messageDialog.ShowDialog();
+                Refresh();
+                OnGiaoVienHuongDanLoad(sender, e);
+            }
+        }
+
         private void OnGiaoVienHuongDanLoad(object sender, EventArgs e)
         {
             _dgvGiaoVien.DataSource = gvController.ShowGiaoVien();
@@ -75,6 +102,43 @@ namespace QuanLySinhVien.GUI
             gvController.InsertTaiKhoan(gvAttribute);
             OnGiaoVienHuongDanLoad(sender, e);
         }
+
+        private int _dong;
+
+        private void DSGV_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            _dong = e.RowIndex;
+            _cboMaGiaoVienHD.Text = _dgvGiaoVien.Rows[_dong].Cells[0].Value.ToString();
+            _txtTenGiaoVienHD.Text = _dgvGiaoVien.Rows[_dong].Cells[1].Value.ToString();
+            _txtNgaySinhGV.Text = _dgvGiaoVien.Rows[_dong].Cells[2].Value.ToString();
+            _txtThangSinhGV.Text = _dgvGiaoVien.Rows[_dong].Cells[3].Value.ToString();
+            _txtNamSinhGV.Text = _dgvGiaoVien.Rows[_dong].Cells[4].Value.ToString();
+            _txtGioiTinhGV.Text = _dgvGiaoVien.Rows[_dong].Cells[7].Value.ToString();
+            _txtDiachiGV.Text = _dgvGiaoVien.Rows[_dong].Cells[5].Value.ToString();
+            _txtDienThoaiGV.Text = _dgvGiaoVien.Rows[_dong].Cells[6].Value.ToString();
+            _txtEmailGV.Text = _dgvGiaoVien.Rows[_dong].Cells[8].Value.ToString();
+        }
+        private void _btnTimKiemGiaoVienHD_Click(object sender, EventArgs e)
+        {
+            string tenGV = _txtTimKiemGiaoVienHD.Text;
+            _dgvGiaoVien.DataSource = gvController.SearchGiaoVienHD(tenGV);
+            _txtTongBanGhi.Text = _dgvGiaoVien.Rows.Count.ToString();
+
+            if (_dgvGiaoVien.Rows.Count > 0)
+            {
+                _cboMaGiaoVienHD.Text = _dgvGiaoVien.CurrentRow.Cells[0].Value.ToString();
+                _txtTenGiaoVienHD.Text = _dgvGiaoVien.CurrentRow.Cells[0].Value.ToString();
+                
+            }
+            else
+            {
+                    MessageDialog messageDialog1 = new MessageDialog(@"Không tìm thấy", MessageDialog.DialogType.Ok);
+                    messageDialog1.ShowDialog();
+            }
+            
+            
+        }
+
         #endregion Event
 
         #region Method
@@ -93,6 +157,15 @@ namespace QuanLySinhVien.GUI
             _cboMaGiaoVienHD.DisplayMember = "MaGV";
             _cboMaGiaoVienHD.ValueMember = "MaGV";
         }
+
+        
+
         #endregion Method
+
+        
+
+        
+
+        
     }
 }

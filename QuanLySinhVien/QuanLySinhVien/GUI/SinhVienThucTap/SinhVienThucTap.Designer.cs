@@ -29,6 +29,17 @@
         private void InitializeComponent()
         {
             this._dgvSinhVien = new System.Windows.Forms.DataGridView();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenLop = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.KhoaHoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._grbDatSinhVienTT = new System.Windows.Forms.GroupBox();
             this._grbThongTinSinhVienTT = new System.Windows.Forms.GroupBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -64,17 +75,6 @@
             this._btnThemSV = new System.Windows.Forms.Label();
             this._txtTongBanGhi = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenLop = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.KhoaHoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this._dgvSinhVien)).BeginInit();
             this._grbDatSinhVienTT.SuspendLayout();
             this._grbThongTinSinhVienTT.SuspendLayout();
@@ -102,6 +102,83 @@
             this._dgvSinhVien.Size = new System.Drawing.Size(917, 134);
             this._dgvSinhVien.TabIndex = 0;
             this._dgvSinhVien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DSSV_CellClick);
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "MaSV";
+            this.Column5.HeaderText = "Mã sinh viên";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "TenSV";
+            this.Column6.HeaderText = "Tên sinh viên";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            // 
+            // Column7
+            // 
+            this.Column7.DataPropertyName = "Ngay";
+            this.Column7.HeaderText = "Ngày sinh";
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            // 
+            // Column8
+            // 
+            this.Column8.DataPropertyName = "Thang";
+            this.Column8.HeaderText = "Tháng sinh";
+            this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
+            // 
+            // Column9
+            // 
+            this.Column9.DataPropertyName = "Nam";
+            this.Column9.HeaderText = "Năm sinh";
+            this.Column9.Name = "Column9";
+            this.Column9.ReadOnly = true;
+            // 
+            // Column10
+            // 
+            this.Column10.DataPropertyName = "GioiTinh";
+            this.Column10.HeaderText = "Giới tính";
+            this.Column10.Name = "Column10";
+            this.Column10.ReadOnly = true;
+            // 
+            // TenLop
+            // 
+            this.TenLop.DataPropertyName = "TenLop";
+            this.TenLop.HeaderText = "Lớp";
+            this.TenLop.Name = "TenLop";
+            this.TenLop.ReadOnly = true;
+            // 
+            // KhoaHoc
+            // 
+            this.KhoaHoc.DataPropertyName = "KhoaHoc";
+            this.KhoaHoc.HeaderText = "Khóa học";
+            this.KhoaHoc.Name = "KhoaHoc";
+            this.KhoaHoc.ReadOnly = true;
+            // 
+            // Column11
+            // 
+            this.Column11.DataPropertyName = "DiaChi";
+            this.Column11.HeaderText = "Địa chỉ";
+            this.Column11.Name = "Column11";
+            this.Column11.ReadOnly = true;
+            // 
+            // Column12
+            // 
+            this.Column12.DataPropertyName = "DienThoai";
+            this.Column12.HeaderText = "Điện thoại";
+            this.Column12.Name = "Column12";
+            this.Column12.ReadOnly = true;
+            // 
+            // Column13
+            // 
+            this.Column13.DataPropertyName = "Email";
+            this.Column13.HeaderText = "Email";
+            this.Column13.Name = "Column13";
+            this.Column13.ReadOnly = true;
             // 
             // _grbDatSinhVienTT
             // 
@@ -414,6 +491,7 @@
             this._btnXoaSV.TabIndex = 29;
             this._btnXoaSV.Text = "Xóa sinh viên";
             this._btnXoaSV.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this._btnXoaSV.Click += new System.EventHandler(this._btnXoaSV_Click);
             // 
             // _btnThemSV
             // 
@@ -445,83 +523,6 @@
             this.label11.Size = new System.Drawing.Size(100, 16);
             this.label11.TabIndex = 33;
             this.label11.Text = "Tổng số bản ghi";
-            // 
-            // Column5
-            // 
-            this.Column5.DataPropertyName = "MaSV";
-            this.Column5.HeaderText = "Mã sinh viên";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            // 
-            // Column6
-            // 
-            this.Column6.DataPropertyName = "TenSV";
-            this.Column6.HeaderText = "Tên sinh viên";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            // 
-            // Column7
-            // 
-            this.Column7.DataPropertyName = "Ngay";
-            this.Column7.HeaderText = "Ngày sinh";
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
-            // 
-            // Column8
-            // 
-            this.Column8.DataPropertyName = "Thang";
-            this.Column8.HeaderText = "Tháng sinh";
-            this.Column8.Name = "Column8";
-            this.Column8.ReadOnly = true;
-            // 
-            // Column9
-            // 
-            this.Column9.DataPropertyName = "Nam";
-            this.Column9.HeaderText = "Năm sinh";
-            this.Column9.Name = "Column9";
-            this.Column9.ReadOnly = true;
-            // 
-            // Column10
-            // 
-            this.Column10.DataPropertyName = "GioiTinh";
-            this.Column10.HeaderText = "Giới tính";
-            this.Column10.Name = "Column10";
-            this.Column10.ReadOnly = true;
-            // 
-            // TenLop
-            // 
-            this.TenLop.DataPropertyName = "TenLop";
-            this.TenLop.HeaderText = "Lớp";
-            this.TenLop.Name = "TenLop";
-            this.TenLop.ReadOnly = true;
-            // 
-            // KhoaHoc
-            // 
-            this.KhoaHoc.DataPropertyName = "KhoaHoc";
-            this.KhoaHoc.HeaderText = "Khóa học";
-            this.KhoaHoc.Name = "KhoaHoc";
-            this.KhoaHoc.ReadOnly = true;
-            // 
-            // Column11
-            // 
-            this.Column11.DataPropertyName = "DiaChi";
-            this.Column11.HeaderText = "Địa chỉ";
-            this.Column11.Name = "Column11";
-            this.Column11.ReadOnly = true;
-            // 
-            // Column12
-            // 
-            this.Column12.DataPropertyName = "DienThoai";
-            this.Column12.HeaderText = "Điện thoại";
-            this.Column12.Name = "Column12";
-            this.Column12.ReadOnly = true;
-            // 
-            // Column13
-            // 
-            this.Column13.DataPropertyName = "Email";
-            this.Column13.HeaderText = "Email";
-            this.Column13.Name = "Column13";
-            this.Column13.ReadOnly = true;
             // 
             // SinhVienThucTap
             // 

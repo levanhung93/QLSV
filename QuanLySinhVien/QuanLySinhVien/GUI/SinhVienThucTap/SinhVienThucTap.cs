@@ -5,7 +5,7 @@ using System.Drawing;
 using System.Data;
 using System.Text;
 using System.Windows.Forms;
-
+using QuanLySinhVien.Common;
 namespace QuanLySinhVien.GUI
 {
     public partial class SinhVienThucTap : UserControl
@@ -79,6 +79,31 @@ namespace QuanLySinhVien.GUI
             svController.InsertTaiKhoan(svAttribute);
             OnSinhVienThucTapLoad(sender, e);
         }
+        private void _btnXoaSV_Click(object sender, EventArgs e)
+        {
+            if (_cboMaSinhVien.Text == "")
+            {
+                MessageDialog messageDialog = new MessageDialog(@"Bạn chưa chọn thông tin cần xóa!", MessageDialog.DialogType.Ok);
+                messageDialog.ShowDialog();
+            }
+            else
+            {
+                svAttribute.MaSV = _cboMaSinhVien.Text;
+                MessageDialog messageDialog = new MessageDialog(@"Bạn chắc chắn muốn xóa?", MessageDialog.DialogType.YesNo);
+                messageDialog.SendValueDelegate = delegate(MessageDialog.DialogResultType result)
+                {
+                    if (result == MessageDialog.DialogResultType.Yes)
+                    {
+                        svController.DeleteSinhVienTT(svAttribute);
+                        MessageDialog messageDialog1 = new MessageDialog(@"Xóa thành công!", MessageDialog.DialogType.Ok);
+                        messageDialog1.ShowDialog();
+                    }
+                };
+                messageDialog.ShowDialog();
+                Refresh();
+                OnSinhVienThucTapLoad(sender, e);
+            }
+        }
         private int _dong;
         private void DSSV_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -114,6 +139,8 @@ namespace QuanLySinhVien.GUI
             _cboMaSinhVien.Enabled = true;
         }
         #endregion Method
+
+        
 
         
 

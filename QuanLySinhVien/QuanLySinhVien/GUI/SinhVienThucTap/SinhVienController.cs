@@ -59,6 +59,15 @@ namespace QuanLySinhVien.GUI
             String query = "SELECT MaSV, TenSV, Ngay, Thang, Nam, GioiTinh, DiaChi, DienThoai, TenLop, KhoaHoc, Email FROM SINHVIENTHUCTAP,LOP,KHOAHOC WHERE SINHVIENTHUCTAP.MaLop=LOP.MaLop AND LOP.MaKhoa=KHOAHOC.MaKhoa";
             return DatabaseCore.GetDatatable(query);
         }
+        /// <summary>
+        /// hàm xóa thông tin sinh viên thực tập khỏi danh sách
+        /// </summary>
+        /// <param name="svAttribute"></param>
+       public void DeleteSinhVienTT(SinhVienAttribute svAttribute)
+       {
+           string query = "DELETE FROM SINHVIENTHUCTAP WHERE MaSV='" + svAttribute.MaSV + "'";
+           DatabaseCore.ExecuteQuery(query);
+       }
 
 
     }

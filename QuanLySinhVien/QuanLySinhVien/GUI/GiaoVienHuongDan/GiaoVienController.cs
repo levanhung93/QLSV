@@ -60,5 +60,23 @@ namespace QuanLySinhVien.GUI
             string query = "SELECT * FROM GIAOVIENHUONGDAN ";
             return DatabaseCore.GetDatatable(query);
         }
+        /// <summary>
+        /// hàm xóa thông tin giáo viên hướng dẫn khỏi danh sách
+        /// </summary>
+        /// <param name="gvAttribute"></param>
+        public void DeleteGiaoVienHD(GiaoVienAttribute gvAttribute)
+        {
+            string query="DELETE FROM GIAOVIENHUONGDAN WHERE MaGV='"+gvAttribute.MaGV+"'";
+            DatabaseCore.ExecuteQuery(query);
+        }
+        /// <summary>
+        /// hàm tìm kiếm thông tin giáo viên hướng dẫn
+        /// </summary>
+        /// <param name="tenGV"></param>
+        public DataTable SearchGiaoVienHD(string tenGV)
+        {
+            string query = "SELECT * FROM GIAOVIENHUONGDAN WHERE TenGV = '%' + '" + tenGV + "' + '%'";
+            return DatabaseCore.GetDatatable(query);
+        }
     }
 }
